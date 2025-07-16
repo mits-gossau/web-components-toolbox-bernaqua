@@ -47,10 +47,10 @@
 
 :root {
   --background-color: var(--m-white);
-  --color: #585858;
-  --color-secondary: #4a7729;
-  --color-tertiary: #b5bd00;
-  --color-hover: #2c580c;
+  --color: #006893;
+  --color-secondary: #a2b800;
+  --color-tertiary: #65253f;
+  --color-hover: #194393;
   --color-active: var(--color-tertiary);
   --color-disabled: #949494;
 
