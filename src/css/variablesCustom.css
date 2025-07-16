@@ -1,0 +1,153 @@
+/**
+  * Variables naming rule: --{selector aka component aka namespace}-{css property}-{pseudo class or media query name} eg. --p-background-color-hover 
+  * NOTE: Within the component don't use any name spacing eg. component header don't use --header-default-color just use --color the namespace can be added by the Shadow as an html attribute
+  * - if a component holds other components or nodes you can declare or remap classes eg. :host > h1 {--color: var(--h1-color, white);}
+  * - if a component holds other components you should share the attribute namespace with its children
+  */
+
+/* font tracking */
+@import url("https://cdn.fonts.net/t/1.css?apiType=css&projectid=88da0642-fc21-4d15-be42-7baa3508af39");
+
+/* custom BERNAQUA fonts */
+@font-face {
+  font-family: "UniversLTPro";
+  font-style: normal;
+  font-weight: 300;
+  font-stretch: normal;
+  font-display: swap;
+  src: url('https://cdn.migros.ch/ch.migros/static/fonts/univers/UniversLTPro_normal_normal_300.woff2') format('woff2'), url('https://cdn.migros.ch/ch.migros/static/fonts/univers/UniversLTPro_normal_normal_300.woff') format('woff');
+}
+
+@font-face {
+  font-family: "UniversLTProLight";
+  font-style: normal;
+  font-weight: 300;
+  font-stretch: condensed;
+  font-display: swap;
+  src: url('https://cdn.migros.ch/ch.migros/static/fonts/univers/UniversLTPro_normal_condensed_300.woff2') format('woff2'), url('https://cdn.migros.ch/ch.migros/static/fonts/univers/UniversLTPro_normal_condensed_300.woff') format('woff');
+}
+
+@font-face {
+  font-family: "UniversLTProCondensed";
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: condensed;
+  font-display: swap;
+  src: url('https://cdn.migros.ch/ch.migros/static/fonts/univers/UniversLTPro_normal_condensed_400.woff2') format('woff2'), url('https://cdn.migros.ch/ch.migros/static/fonts/univers/UniversLTPro_normal_condensed_400.woff') format('woff');
+}
+
+@font-face {
+  font-family: "UniversLTProBold";
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: condensed;
+  font-display: swap;
+  src: url('https://cdn.migros.ch/ch.migros/static/fonts/univers/UniversLTPro_normal_condensed_700.woff2') format('woff2'), url('https://cdn.migros.ch/ch.migros/static/fonts/univers/UniversLTPro_normal_condensed_700.woff') format('woff');
+}
+
+:root {
+  --background-color: var(--m-white);
+  --color: #585858;
+  --color-secondary: #4a7729;
+  --color-tertiary: #b5bd00;
+  --color-hover: #2c580c;
+  --color-active: var(--color-tertiary);
+  --color-disabled: #949494;
+
+  --color-gradient-0: linear-gradient(0deg, var(--color-secondary), var(--color-tertiary));
+  --color-gradient-45: linear-gradient(45deg, var(--color-secondary), var(--color-tertiary));
+
+  --font-family: UniversLTPro, HelveticaNowText, Helvetica, Arial, sans-serif;
+  --font-family-secondary: UniversLTProCondensed, HelveticaNowText, Helvetica, Arial, sans-serif;
+  --font-family-bold: UniversLTProBold, HelveticaNowTextBold, HelveticaNowText, Helvetica, Arial, sans-serif;
+
+  --h-color: var(--color-secondary);
+  --h1-font-size: calc(1.5 * 1.75em);
+  --h2-color: var(--color-tertiary);
+  --h2-font-family: var(--font-family);
+  --h6-font-size: var(--h2-font-size, 1.5em);
+
+  --button-primary-font-family-custom: var(--font-family-bold);
+  --button-primary-height: 2.8rem;
+  --button-primary-font-size: 1.25rem;
+  --button-primary-padding: 0.2rem 1rem 0 1rem;
+  --button-primary-border-radius: 2px;
+  --button-secondary-border-radius: 2px;
+
+  --logo-default-width-custom: 120px;
+  --logo-default-width-mobile-custom: 80px;
+
+  --header-default-background-color-custom: transparent;
+  --header-default-height-custom: 90px;
+  --header-default-logo-width-custom: var(--logo-default-width-custom);
+  --header-default-content-spacing-mobile: calc(50% - ((var(--header-default-logo-width-custom) / 2) + var(--logo-default-img-padding)));
+  --header-default-margin-custom: -20px 0;
+  --header-default-margin-mobile-custom: var(--header-default-margin-custom);
+
+  --navigation-default-section-background-color: var(--color-secondary);
+  --navigation-default-font-family-custom: UniversLTProLight, var(--font-family-secondary);
+  --navigation-default-section-margin-top-desktop: -8px;
+  --navigation-default-text-decoration-hover: underline;
+  --navigation-default-text-decoration-active : none;
+
+  --footer-default-h4-color: var(--m-white);
+  --footer-default-h4-font-size: 1.875rem;
+  --footer-default-ul-li-font-family: UniversLTPro, var(--font-family-secondary);
+  --footer-default-a-font-size: .9rem;
+  --footer-default-a-color: var(--m-white);
+  --footer-default-a-color-hover: var(--m-white);
+  --footer-default-invert-a-color-hover-custom: var(--m-white);
+  --footer-default-a-text-decoration: none;
+  --footer-default-a-text-decoration-hover: underline;
+
+  --language-switcher-default-a-font-size: 14px;
+  --language-switcher-default-a-color: var(--m-white);
+  --language-switcher-default-a-color-hover: var(--m-white);
+  --language-switcher-default-a-text-decoration: none;
+  --language-switcher-default-a-text-decoration-hover: underline;
+  --language-switcher-default-ul-margin-custom: 0 0 0 0;
+  --language-switcher-default-ul-margin-mobile: 0 0 0 0;
+
+  --emotion-pictures-general-h2-color: var(--m-white);
+  --emotion-carousel-default-color-hover-custom: var(--m-white);
+
+  --carousel-two-default-color-hover-custom: var(--m-white);
+
+  --details-default-h4-font-family: UniversLTProLight, var(--font-family-secondary);
+  --details-default-h4-font-size: 1.5625rem;
+  --details-default-summary-font-family: var(--font-family);
+  --details-default-border-top-custom: 1px solid var(--color-primary);
+  --details-default-summary-border-bottom-open-custom: none;
+
+  --any-margin-top-first-child: 52px;
+  --any-margin-top-first-child-mobile: 42px;
+
+  /* custom BERNAQUA-specific variables */
+  --logo-default-img-background-color: var(--m-white);
+  --logo-default-img-padding: 15px;
+  --logo-default-img-box-shadow: 1px 2px 2px 0 rgba(0, 0, 0, .42);
+  --header-default-background: var(--color-gradient-45);
+  --navigation-top-a-link-font-size-custom: 1.5rem;
+  --navigation-sub-title-link-font-size-custom: 1.7rem;
+  --navigation-sub-a-link-font-size-custom: 1.5rem;
+  --navigation-default-margin-left: 40px;
+  --navigation-default-li-ul-section-top: 32px;
+  --footer-default-invert-background: var(--color-gradient-0);
+  --footer-default-footer-copyright-align-self-custom: start;
+  --form-default-field-validation-error-color: #e02805;
+}
+
+@media only screen and (max-width: 1200px) {
+  :root {
+    --header-default-background-color-custom: var(--color-secondary);
+    --header-default-logo-width-custom: var(--logo-default-width-mobile-custom);
+    --header-default-height-custom: 80px;
+    --navigation-default-margin-left: 0px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  :root {
+    --header-default-height-custom: 70px;
+  }
+}
