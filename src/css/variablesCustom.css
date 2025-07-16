@@ -87,6 +87,7 @@
   --navigation-default-section-background-color: var(--color-secondary);
   --navigation-default-font-family-custom: UniversLTProLight, var(--font-family-secondary);
   --navigation-default-section-margin-top-desktop: -8px;
+  --navigation-default-color-custom: var(--color);
   --navigation-default-text-decoration-hover: underline;
   --navigation-default-text-decoration-active : none;
 
@@ -96,6 +97,7 @@
   --footer-default-a-font-size: .9rem;
   --footer-default-a-color: var(--m-white);
   --footer-default-a-color-hover: var(--m-white);
+  --footer-default-invert-background-color-custom: var(--color-hover);
   --footer-default-invert-a-color-hover-custom: var(--m-white);
   --footer-default-a-text-decoration: none;
   --footer-default-a-text-decoration-hover: underline;
