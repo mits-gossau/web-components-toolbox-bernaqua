@@ -217,22 +217,22 @@
       separateFolder: true
     },
     {
-      selector: 'bernaquaa-',
+      selector: 'bernaqua-a-',
       url: 'atoms/',
       separateFolder: true
     },
     {
-      selector: 'bernaquac-',
+      selector: 'bernaqua-c-',
       url: 'controllers/',
       separateFolder: true
     },
     {
-      selector: 'bernaquam-',
+      selector: 'bernaqua-m-',
       url: 'molecules/',
       separateFolder: true
     },
     {
-      selector: 'bernaquao-',
+      selector: 'bernaqua-o-',
       url: 'organisms/',
       separateFolder: true
     }

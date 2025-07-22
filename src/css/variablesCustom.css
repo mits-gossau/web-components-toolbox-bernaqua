@@ -46,8 +46,9 @@
 }
 
 :root {
+
   --background-color: var(--m-white);
-  --color: #006893;
+  --color: #343434;
   --color-secondary: #a2b800;
   --color-tertiary: #65253f;
   --color-hover: #194393;
@@ -74,15 +75,17 @@
   --button-primary-border-radius: 2px;
   --button-secondary-border-radius: 2px;
 
-  --logo-default-width-custom: 120px;
-  --logo-default-width-mobile-custom: 80px;
-
   --header-default-background-color-custom: transparent;
+  --header-default-header-position: static;
+  --header-default-width: calc(var(--header-default-content-width));
   --header-default-height-custom: 90px;
+  --header-default-margin-custom: auto;
+  --header-default-justify-content-custom: flex-start;
+  --header-default-align-items-custom: start;
   --header-default-logo-width-custom: var(--logo-default-width-custom);
   --header-default-content-spacing-mobile: calc(50% - ((var(--header-default-logo-width-custom) / 2) + var(--logo-default-img-padding)));
-  --header-default-margin-custom: -20px 0;
   --header-default-margin-mobile-custom: var(--header-default-margin-custom);
+  --header-default-a-menu-icon-background-color-custom: var(--color-info);
 
   --navigation-default-section-background-color: var(--color-secondary);
   --navigation-default-font-family-custom: UniversLTProLight, var(--font-family-secondary);
@@ -91,13 +94,15 @@
   --navigation-default-text-decoration-hover: underline;
   --navigation-default-text-decoration-active : none;
 
+  --search-input-padding: 0.25em;
+
   --footer-default-h4-color: var(--m-white);
   --footer-default-h4-font-size: 1.875rem;
   --footer-default-ul-li-font-family: UniversLTPro, var(--font-family-secondary);
   --footer-default-a-font-size: .9rem;
   --footer-default-a-color: var(--m-white);
   --footer-default-a-color-hover: var(--m-white);
-  --footer-default-invert-background-color-custom: var(--color-hover);
+  --footer-default-invert-background-color-custom: var(--color-info);
   --footer-default-invert-a-color-hover-custom: var(--m-white);
   --footer-default-a-text-decoration: none;
   --footer-default-a-text-decoration-hover: underline;
@@ -125,25 +130,22 @@
   --any-margin-top-first-child-mobile: 42px;
 
   /* custom BERNAQUA-specific variables */
-  --logo-default-img-background-color: var(--m-white);
-  --logo-default-img-padding: 15px;
-  --logo-default-img-box-shadow: 1px 2px 2px 0 rgba(0, 0, 0, .42);
-  --header-default-background: var(--color-gradient-45);
-  --navigation-top-a-link-font-size-custom: 1.5rem;
-  --navigation-sub-title-link-font-size-custom: 1.7rem;
-  --navigation-sub-a-link-font-size-custom: 1.5rem;
-  --navigation-default-margin-left: 40px;
-  --navigation-default-li-ul-section-top: 32px;
-  --footer-default-invert-background: var(--color-gradient-0);
-  --footer-default-footer-copyright-align-self-custom: start;
-  --form-default-field-validation-error-color: #e02805;
+    --color-info: #194393;
+    --color-aqua: #006893;
+    --color-fitness: #a2b800;
+    --color-wellness: #65253f;
+
+    --navigation-default-meta-background-color-custom: #f2f2f2;
+    --navigation-default-meta-font-size: 1rem;
+    --navigation-default-meta-font-weight:
+
 }
 
 @media only screen and (max-width: 1200px) {
   :root {
-    --header-default-background-color-custom: var(--color-secondary);
     --header-default-logo-width-custom: var(--logo-default-width-mobile-custom);
     --header-default-height-custom: 80px;
+    --header-default-margin-custom: 0;
     --navigation-default-margin-left: 0px;
   }
 }
