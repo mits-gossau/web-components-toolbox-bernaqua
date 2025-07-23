@@ -374,38 +374,47 @@ export default class Navigation extends Mutation() {
       }
       :host > nav > ul > li.topnavigation > a-link {
         display: block;
-        padding-left: 45px;
+        padding-left: 65px;
         background-size: 40px;
-        background-position-x: 15px;
+        background-position-x: 30px;
         background-position-y: 40%;
-
       }
+      :host > nav > ul > li.topnavigation section a-link:hover {
+        --navigation-default-color-hover: var(--m-white);
+      }
+
       :host > nav > ul > li.topnavigation.aqua {
         --navigation-default-color: var(--color-aqua);
+        --navigation-default-color-mobile: var(--color-aqua);
       }
       :host > nav > ul > li.topnavigation.aqua > a-link {
         background-image: url(/src/img/navigation/aqua.svg);
         --navigation-default-color: var(--color-aqua);
         --navigation-default-color-active: var(--color-aqua);
+        --navigation-default-color-mobile: var(--color-aqua);
       }
       :host > nav > ul > li.topnavigation.aqua > a-link:hover {
         background-color: var(--color-aqua);
         background-image: url(/src/img/navigation/aqua-w.svg);
         --navigation-default-color: var(--m-white);
         --navigation-default-color-active: var(--m-white);
+        --navigation-default-color-mobile: var(--m-white);
       }
       :host > nav > ul > li.topnavigation.aqua section {
         --navigation-default-color: var(--m-white);
         --navigation-default-color-active:  var(--m-white);
+        --navigation-default-color-mobile: var(--m-white);
         --navigation-default-section-background-color: var(--color-aqua);
       }
       :host > nav > ul > li.topnavigation.fitness {
         --navigation-default-color: var(--color-fitness);
+        --navigation-default-color-mobile: var(--color-fitness);
       }
       :host > nav > ul > li.topnavigation.fitness > a-link {
         background-image: url(/src/img/navigation/fitness.svg);
         --navigation-default-color: var(--color-fitness);
         --navigation-default-color-active: var(--color-fitness);
+        --navigation-default-color-mobile: var(--color-fitness);
       }
       :host > nav > ul > li.topnavigation.fitness > a-link:hover {
         background-color: var(--color-fitness);
@@ -416,25 +425,30 @@ export default class Navigation extends Mutation() {
       :host > nav > ul > li.topnavigation.fitness section {
         --navigation-default-color: var(--m-white);
         --navigation-default-color-active:  var(--m-white);
+        --navigation-default-color-mobile: var(--m-white);
         --navigation-default-section-background-color: var(--color-fitness);
       }
       :host > nav > ul > li.topnavigation.wellness {
         --navigation-default-color: var(--color-wellness);
+        --navigation-default-color-mobile: var(--color-wellness);
       }
       :host > nav > ul > li.topnavigation.wellness > a-link {
         background-image: url(/src/img/navigation/wellness.svg);
         --navigation-default-color: var(--color-wellness);
         --navigation-default-color-active: var(--color-wellness);
+        --navigation-default-color-mobile: var(--color-wellness);
       }
       :host > nav > ul > li.topnavigation.wellness > a-link:hover {
         background-color: var(--color-wellness);
         background-image: url(/src/img/navigation/wellness-w.svg);
         --navigation-default-color: var(--m-white);
         --navigation-default-color-active: var(--m-white);
+        --navigation-default-color-mobile: var(--m-white);
       }
       :host > nav > ul > li.topnavigation.wellness section {
         --navigation-default-color: var(--m-white);
         --navigation-default-color-active:  var(--m-white);
+        --navigation-default-color-mobile: var(--m-white);
         --navigation-default-section-background-color: var(--color-wellness);
       }
 
@@ -513,7 +527,6 @@ export default class Navigation extends Mutation() {
           --min-height-mobile: 0;
           background-color: var(--background-color, black) !important;
           scrollbar-color: var(--color-secondary) var(--background-color);
-          margin-top: 85px;
           width: auto;
 
         }
@@ -630,6 +643,13 @@ export default class Navigation extends Mutation() {
           border-bottom: 0;
           padding-bottom: 0;
         }
+        :host > nav > ul > li.topnavigation > a-link {
+          padding-left: 65px;
+          background-position-x: 20px;
+        }
+        :host > nav > ul > li.topnavigation.open > a-link {
+          background-position-x: 15px;
+        }
       }
       @keyframes open {
         0% {left: -100vw}
@@ -683,6 +703,8 @@ export default class Navigation extends Mutation() {
           align-items: start;
           height: 100%;
           width: 100%;
+          padding-left: 0;
+          margin-left: 65px;
         }
         :host > nav > ul .meta-nav li.search {
           width: 100%;

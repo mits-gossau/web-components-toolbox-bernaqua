@@ -185,19 +185,11 @@ export default class Header extends Shadow() {
       :host([sticky]) {
         position: static;
       }
-      :host > header > ${this.getAttribute('m-navigation') || 'm-navigation'}{
+      :host > header > ${this.getAttribute('bernaqua-m-navigation') || 'bernaqua-m-navigation'}{
         flex-grow: 1;
         max-width: calc(var(--content-width, 55%) - var(--logo-width));
       }
       
-      :host > header::before {
-        display: block;
-        width: var(--logo-width);
-        height: auto;
-        clear: both;
-        content: '';
-        order: 1;
-      }
       :host > header > *:first-child {
         align-self: baseline;
       }
@@ -273,7 +265,7 @@ export default class Header extends Shadow() {
       :host([sticky]:not(.top)) {
         transition: var(--sticky-transition-hide, top .4s ease);
       }
-      :host > header > ${this.getAttribute('m-navigation') || 'm-navigation'}{
+      :host > header > ${this.getAttribute('bernaqua-m-navigation') || 'bernaqua-m-navigation'}{
         order: 2;
       }
 
@@ -342,14 +334,14 @@ export default class Header extends Shadow() {
           }
           width: var(--width-mobile, var(--width, 100%));
         }
-        :host > header > ${this.getAttribute('m-navigation') || 'm-navigation'}{
+        :host > header > ${this.getAttribute('bernaqua-m-navigation') || 'bernaqua-m-navigation'}{
           animation: close .4s ease-in;
           left: -100vw;
         }
-        :host > header > ${this.getAttribute('m-navigation') || 'm-navigation'}.open {
+        :host > header > ${this.getAttribute('bernaqua-m-navigation') || 'bernaqua-m-navigation'}.open {
           display: block;
         }
-        :host > header.open > ${this.getAttribute('m-navigation') || 'm-navigation'} {
+        :host > header.open > ${this.getAttribute('bernaqua-m-navigation') || 'bernaqua-m-navigation'} {
           animation: open .3s ease-out;
           left: 0;
         }
@@ -372,18 +364,18 @@ export default class Header extends Shadow() {
           left: var(--left-open-mobile, var(--left-open, var(--position, auto)));
           width: var(--width-open-mobile, var(--width-open, var(--width, auto)));
         }
-        :host > header > ${this.getAttribute('m-navigation') || 'm-navigation'} {
-          display: var(--${this.getAttribute('m-navigation') || 'm-navigation'}-display-mobile, none);
+        :host > header > ${this.getAttribute('bernaqua-m-navigation') || 'bernaqua-m-navigation'} {
+          display: var(--${this.getAttribute('bernaqua-m-navigation') || 'bernaqua-m-navigation'}-display-mobile, none);
           left: 0;
-          background-color: var(--${this.getAttribute('m-navigation') || 'm-navigation'}-background-color-mobile, transparent);
-          height: var(--${this.getAttribute('m-navigation') || 'm-navigation'}-height-mobile, 0);
+          background-color: var(--${this.getAttribute('bernaqua-m-navigation') || 'bernaqua-m-navigation'}-background-color-mobile, transparent);
+          height: var(--${this.getAttribute('bernaqua-m-navigation') || 'bernaqua-m-navigation'}-height-mobile, 0);
           overflow: hidden;
-          position: var(--${this.getAttribute('m-navigation') || 'm-navigation'}-position-mobile, absolute);
-          align-items: var(--${this.getAttribute('m-navigation') || 'm-navigation'}-align-items-mobile, normal);
-          justify-content: var(--${this.getAttribute('m-navigation') || 'm-navigation'}-justify-content-mobile, normal);
-          transition: var(--${this.getAttribute('m-navigation') || 'm-navigation'}-transition, all 0.2s ease);
-          top: var(--${this.getAttribute('m-navigation') || 'm-navigation'}-top-mobile, var(--height-mobile, 50px));
-          padding: var(--${this.getAttribute('m-navigation') || 'm-navigation'}-padding-mobile, 0);
+          position: var(--${this.getAttribute('bernaqua-m-navigation') || 'bernaqua-m-navigation'}-position-mobile, absolute);
+          align-items: var(--${this.getAttribute('bernaqua-m-navigation') || 'bernaqua-m-navigation'}-align-items-mobile, normal);
+          justify-content: var(--${this.getAttribute('bernaqua-m-navigation') || 'bernaqua-m-navigation'}-justify-content-mobile, normal);
+          transition: var(--${this.getAttribute('bernaqua-m-navigation') || 'bernaqua-m-navigation'}-transition, all 0.2s ease);
+          top: var(--${this.getAttribute('bernaqua-m-navigation') || 'bernaqua-m-navigation'}-top-mobile, var(--height-mobile, 50px));
+          padding: var(--${this.getAttribute('bernaqua-m-navigation') || 'bernaqua-m-navigation'}-padding-mobile, 0);
           width: 100%;
           min-width: 100%;
         }
@@ -397,11 +389,11 @@ export default class Header extends Shadow() {
         :host > header > a-title {
           z-index: var(--a-title-z-index, auto);
         }
-        :host > header.open > ${this.getAttribute('m-navigation') || 'm-navigation'} {
-          display: var(--${this.getAttribute('m-navigation') || 'm-navigation'}-display-open-mobile, var(--${this.getAttribute('m-navigation') || 'm-navigation'}-display-mobile, block));
-          height: var(--${this.getAttribute('m-navigation') || 'm-navigation'}-height-open-mobile, 100vh);
-          overflow-y: var(--${this.getAttribute('m-navigation') || 'm-navigation'}-overflow-y-open-mobile, auto);
-          padding: var(--${this.getAttribute('m-navigation') || 'm-navigation'}-padding-open-mobile, var(--${this.getAttribute('m-navigation') || 'm-navigation'}-padding-mobile, 0));
+        :host > header.open > ${this.getAttribute('bernaqua-m-navigation') || 'bernaqua-m-navigation'} {
+          display: var(--${this.getAttribute('bernaqua-m-navigation') || 'bernaqua-m-navigation'}-display-open-mobile, var(--${this.getAttribute('bernaqua-m-navigation') || 'bernaqua-m-navigation'}-display-mobile, block));
+          height: var(--${this.getAttribute('bernaqua-m-navigation') || 'bernaqua-m-navigation'}-height-open-mobile, 100vh);
+          overflow-y: var(--${this.getAttribute('bernaqua-m-navigation') || 'bernaqua-m-navigation'}-overflow-y-open-mobile, auto);
+          padding: var(--${this.getAttribute('bernaqua-m-navigation') || 'bernaqua-m-navigation'}-padding-open-mobile, var(--${this.getAttribute('bernaqua-m-navigation') || 'bernaqua-m-navigation'}-padding-mobile, 0));
         }
         :host  > header > a-menu-icon {
           position: absolute;
@@ -563,7 +555,7 @@ export default class Header extends Shadow() {
   }
 
   get mNavigation () {
-    return this.root.querySelector(this.getAttribute('m-navigation') || 'm-navigation')
+    return this.root.querySelector(this.getAttribute('bernaqua-m-navigation') || 'bernaqua-m-navigation')
   }
 
   get aLogo () {
