@@ -78,7 +78,7 @@
   --header-default-background-color-custom: transparent;
   --header-default-header-position: static;
   --header-default-width: calc(var(--header-default-content-width));
-  --header-default-height-custom: 90px;
+  --header-default-height-custom: 115px;
   --header-default-margin-custom: auto;
   --header-default-justify-content-custom: flex-start;
   --header-default-align-items-custom: start;
@@ -87,7 +87,7 @@
   --header-default-margin-mobile-custom: var(--header-default-margin-custom);
   --header-default-a-menu-icon-background-color-custom: var(--color-info);
 
-  --navigation-default-section-background-color: var(--color-secondary);
+  --navigation-default-background-color-mobile: var(--m-white);
   --navigation-default-font-family-custom: UniversLTProLight, var(--font-family-secondary);
   --navigation-default-section-margin-top-desktop: -8px;
   --navigation-default-color-custom: var(--color);
@@ -108,8 +108,8 @@
   --footer-default-a-text-decoration-hover: underline;
 
   --language-switcher-default-a-font-size: 14px;
-  --language-switcher-default-a-color: var(--m-white);
-  --language-switcher-default-a-color-hover: var(--m-white);
+  --language-switcher-default-a-color: var(--color-black);
+  --language-switcher-default-a-color-hover: var(--color-black);
   --language-switcher-default-a-text-decoration: none;
   --language-switcher-default-a-text-decoration-hover: underline;
   --language-switcher-default-ul-margin-custom: 0 0 0 0;
@@ -117,6 +117,8 @@
 
   --emotion-pictures-general-h2-color: var(--m-white);
   --emotion-carousel-default-color-hover-custom: var(--m-white);
+  --emotion-carousel-default-any-margin-top-first-child-custom: 0;
+  --emotion-carousel-default-any-margin-top-first-child-mobile-custom: 0;
 
   --carousel-two-default-color-hover-custom: var(--m-white);
 
@@ -134,8 +136,10 @@
     --color-aqua: #006893;
     --color-fitness: #a2b800;
     --color-wellness: #65253f;
+    --color-grey: #f2f2f2;
+    --color-black: #343434;
 
-    --navigation-default-meta-background-color-custom: #f2f2f2;
+    --navigation-default-meta-background-color-custom: var(--color-grey);
     --navigation-default-meta-font-size: 1rem;
     --navigation-default-meta-font-weight:
 
