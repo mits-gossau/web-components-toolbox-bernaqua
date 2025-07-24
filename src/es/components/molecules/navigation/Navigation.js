@@ -555,6 +555,10 @@ export default class Navigation extends Mutation() {
           border: 0;
           width: auto;
         }
+        :host > nav > ul:first-child {
+          padding-top: 40px;
+          background-color: var(--navigation-default-background-color-mobile);
+        }
         :host > nav > ul > li > a-arrow{
           padding-bottom: 2px;
         }
@@ -595,7 +599,7 @@ export default class Navigation extends Mutation() {
         }
         :host > nav > ul li > ${this.getAttribute('o-nav-wrapper') || 'o-nav-wrapper'} > section {
           top: auto;
-          margin-top: calc(3rem + 1px);
+          margin-top: calc(2.7rem);
           max-height: unset;
           padding: 0 0 4rem 0;
           z-index: 100;
