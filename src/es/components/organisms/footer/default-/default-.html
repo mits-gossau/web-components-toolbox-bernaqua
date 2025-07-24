@@ -1,70 +1,118 @@
-<o-footer namespace="footer-default-">
-
+<bernaqua-o-footer namespace="footer-default-">
     <div class="invert">
-        <o-wrapper namespace="footer-default-" class="font-size-tiny-desktop">
-            <div class=footer-links-row>
-                <h4><strong>BERNAQUA Mehr über uns</strong></h4>
-                <ul>
-                    <li><a href="">Aktuelles</a></li>
-                    <li><a href="">Jobs</a></li>
-                </ul>
-            </div>
-            <div class=footer-links-row>
-                <h4><strong>Rechtliches</strong></h4>
-                <ul>
-                    <li><a href="">Datenschutzerklärung</a></li>
-                    <li><a href="">Wettbewerb AGBs</a></li>
-                    <li><a href="">Geschenkkarten</a></li>
-                </ul>
-            </div>
-            <div class=footer-links-row>
-                <h4><strong>Folge uns!</strong></h4>
-                <div>
-                    <ul class=social-links>
-                        <li><a href=#>
-                                <img src="/src/img/social-media-icons/facebook.png" alt="Facebook">
-                            </a></li>
-                        <li><a href=#>
-                            <img src="/src/img/social-media-icons/youtube.png" alt="Youtube">
-                            </a></li>
-                        <li><a href=#>
-                            <img src="/src/img/social-media-icons/tripadvisor.png" alt="Tripadvisor">
-                            </a></li>
-                        <li><a href=#>
-                            <img src="/src/img/social-media-icons/freizeit.png" alt="Freizeit.ch">
-                            </a></li>
+        <o-wrapper namespace="footer-default-">
+            <section>
+                <div class="footer-links-row">
+                    <h4>INFOS &amp; KONTAKT</h4>
+                    <ul>
+                        <li><a href="/bernaqua/infos/anfahrt" target="">Anfahrt</a></li>
+                        <li><a href="/bernaqua/infos/faq" target="">FAQ</a></li>
+                        <li><a href="/bernaqua/infos/fundsachen" target="">Fundsachen</a></li>
+                        <li><a href="/bernaqua/infos/kontakt" target="">Kontakt</a></li>
                     </ul>
                 </div>
-            </div>
-        </o-wrapper>
+                <div class="footer-links-row">
+                    <h4>&#xDC;BER DAS BERNAQUA</h4>
+                    <ul>
+                        <li><a href="/bernaqua/infos/ueber-uns" target="">&#xDC;ber uns</a></li>
+                        <li><a href="/bernaqua/infos/lageplan" target="">Lageplan</a></li>
+                        <li><a href="/bernaqua/infos/jobs" target="">Jobs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links-row no-details">
+                    <h4>SOCIAL MEDIA</h4>
+                    <ul class="social-links">
+                        <li><a href="http://www.facebook.com/bernaqua"><img
+                                    src="../../../../../../src/img/social-media-icons/facebook.png" alt="" width="56"
+                                    height="55"></a></li>
+                        <li><a href="http://www.youtube.com/user/Bernaqua"><img
+                                    src="../../../../../src/img/social-media-icons/youtube.png" alt="Youtube" width="57"
+                                    height="44"></a></li>
+                        <li><a
+                                href="https://www.tripadvisor.de/Attraction_Review-g188052-d2272426-Reviews-Bernaqua_Water_Park_Fitness_Wellness-Bern_Bern_Mittelland_District_Canton_of_Bern.html"><img
+                                    src="../../../../../src/img/social-media-icons/tripadvisor.png" alt="Tripadvisor"
+                                    width="56" height="56"></a></li>
+                        <li><a href="https://www.freizeit.ch/freizeit/14776/bernaqua-erlebnisbad"><img
+                                    src="../../../../../src/img/social-media-icons/freizeit.png" alt="Freizeit"
+                                    width="131" height="51"></a></li>
+                    </ul>
+                    <h4>NEWSLETTER</h4>
+                    <p>
+                        <a-button namespace="button-primary-" href="/bernaqua/infos/newsletter">
+                            Anmelden
+                        </a-button>
+                    </p>
 
+                </div>
+            </section>
+        </o-wrapper>
     </div>
-    <div class="invert orange">
-        <style>
-            :host .invert.orange {
-                --footer-default-invert-background-color: var(--footer-default-invert-orange-background-color-custom, var(--color-secondary));
-            }
-        </style>
-        <div class="footer-links font-size-tiny-desktop">
-            <ul>
-                <li>
-                    <a href="https://www.zueriseecenter.ch/impressum/" target="">Impressum</a>
-                </li>
-                <li>© 2022 Genossenschaft Migros Zürich</li>
-            </ul>
-            <!-- live-server bug workaround: https://github.com/ritwickdey/vscode-live-server/issues/684 - don't use this empty comment in production!!! -->
-            <!--
-            <ul class=social-links hidden=true>
-                <li><a href=#><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 22" version="1.1" xml:space="preserve" x="0px" y="0px" width="52px" height="22px">
-                    <path d="M 20.0986 17.1597 L 18.2289 17.1597 L 18.2289 16.1001 C 17.5201 16.8955 16.9192 17.2969 16.2643 17.2969 C 15.6896 17.2969 15.2905 17.0315 15.0908 16.552 C 14.9693 16.2607 14.8831 15.8057 14.8831 15.1372 L 14.8831 7.4336 L 16.7529 7.4336 L 16.7529 14.656 C 16.7529 15.0645 16.7529 15.2336 16.7529 15.3301 C 16.7965 15.6001 16.9138 15.6987 17.1515 15.6987 C 17.5093 15.6987 17.8333 15.3945 18.2289 14.8484 L 18.2289 7.4336 L 20.0986 7.4336 L 20.0986 17.1597 Z" fill="currentColor"/>
-                    <path d="M 13.5055 10.6116 C 13.5055 9.5718 13.2922 8.7917 12.9151 8.3003 C 12.417 7.6353 11.6358 7.3628 10.8486 7.3628 C 9.9575 7.3628 9.2794 7.6353 8.782 8.3003 C 8.399 8.7917 8.1935 9.5806 8.1935 10.6199 L 8.1917 14.0779 C 8.1917 15.1118 8.3744 15.8257 8.7576 16.3125 C 9.2549 16.9756 10.0614 17.3267 10.8486 17.3267 C 11.6358 17.3267 12.4564 16.9756 12.9545 16.3125 C 13.3315 15.8257 13.5055 15.1118 13.5055 14.0779 L 13.5055 10.6116 ZM 11.6358 14.2708 C 11.7341 15.2336 11.429 15.7114 10.8484 15.7114 C 10.2679 15.7114 9.963 15.2336 10.0614 14.2708 L 10.0614 10.4189 C 9.963 9.4561 10.2681 9.0044 10.8486 9.0044 C 11.4291 9.0044 11.7352 9.4561 11.6368 10.4189 L 11.6358 14.2708 Z" fill="currentColor"/>
-                    <path d="M 6.1251 11.8633 L 6.1251 17.1597 L 4.157 17.1597 L 4.157 11.8633 C 4.157 11.8633 2.1176 5.3699 1.697 4.1594 L 3.7635 4.1594 L 5.1445 9.2319 L 6.5187 4.1594 L 8.5853 4.1594 L 6.1251 11.8633 Z" fill="currentColor"/>
-                    <path d="M 39.329 8.9805 C 39.0358 8.9805 38.6998 9.1318 38.4019 9.4199 L 38.3998 15.2598 C 38.6977 15.5513 39.0358 15.6987 39.329 15.6987 C 39.8428 15.6987 40.0747 15.3301 40.0747 14.3669 L 40.0747 10.2261 C 40.0747 9.2632 39.8428 8.9805 39.329 8.9805 Z" fill="currentColor"/>
-                    <path d="M 46.668 10.1382 C 46.668 9.2478 46.4328 8.9805 45.8422 8.9805 C 45.2472 8.9805 44.995 9.2261 44.995 10.126 L 44.995 11.1909 L 46.668 11.1892 L 46.668 10.1382 Z" fill="currentColor"/>
-                    <path d="M 50.7065 5.21 C 50.7065 5.21 50.4195 3.2373 49.5383 2.3687 C 48.4211 1.2283 47.1683 1.2229 46.5941 1.156 C 42.4822 0.8667 36.3142 0.8667 36.3142 0.8667 L 36.3013 0.8667 C 36.3013 0.8667 30.1332 0.8667 26.0214 1.156 C 25.447 1.2229 24.1947 1.2283 23.0771 2.3687 C 22.196 3.2373 21.9093 5.21 21.9093 5.21 C 21.9093 5.21 21.6154 7.5264 21.6154 9.8428 L 21.6154 12.0146 C 21.6154 14.3311 21.9093 16.6472 21.9093 16.6472 C 21.9093 16.6472 22.196 18.6201 23.0771 19.4888 C 24.1947 20.6292 25.6633 20.5925 26.3172 20.7122 C 28.6679 20.9319 36.3077 21 36.3077 21 C 36.3077 21 42.4822 20.9907 46.5941 20.7014 C 47.1683 20.6348 48.4211 20.6292 49.5383 19.4888 C 50.4195 18.6201 50.7065 16.6472 50.7065 16.6472 C 50.7065 16.6472 51 14.3311 51 12.0146 L 51 9.8428 C 51 7.5264 50.7065 5.21 50.7065 5.21 ZM 28.0694 17.1597 L 26.1013 17.1597 L 26.1013 6.0854 L 24.0348 6.0854 L 24.0348 4.2578 L 30.2343 4.2559 L 30.2343 6.0854 L 28.0694 6.0854 L 28.0694 17.1597 ZM 35.1546 17.1597 L 33.2849 17.1597 L 33.2849 16.1001 C 32.576 16.8955 31.9752 17.2969 31.3202 17.2969 C 30.7455 17.2969 30.3464 17.0315 30.1467 16.552 C 30.0251 16.2607 29.939 15.8057 29.939 15.1372 L 29.939 7.5298 L 31.8088 7.5298 L 31.8088 14.656 C 31.8088 15.0645 31.8088 15.2336 31.8088 15.3301 C 31.8525 15.6001 31.9697 15.6987 32.2075 15.6987 C 32.5653 15.6987 32.8891 15.3945 33.2849 14.8484 L 33.2849 7.5298 L 35.1546 7.5298 L 35.1546 17.1597 ZM 41.9444 14.2708 C 41.9444 15.1606 41.8666 15.7891 41.7476 16.1968 C 41.5099 16.9121 40.9916 17.2837 40.2822 17.2837 C 39.6486 17.2837 38.9996 16.9106 38.4044 16.1899 L 38.4019 17.1597 L 36.6306 17.1597 L 36.6306 4.2559 L 38.4019 4.2559 L 38.3998 8.4629 C 38.9753 7.7698 39.6267 7.3755 40.2822 7.3755 C 40.9916 7.3755 41.4683 7.7764 41.7062 8.4971 C 41.8251 8.884 41.9444 9.5073 41.9444 10.4189 L 41.9444 14.2708 ZM 45.8588 15.6987 C 46.2974 15.6987 46.553 15.4658 46.6547 14.9995 C 46.6711 14.9045 46.668 14.4888 46.668 13.7891 L 48.5376 13.7891 L 48.5376 14.0623 C 48.5376 14.6238 48.4904 15.0212 48.4743 15.1958 C 48.4142 15.5825 48.2742 15.9321 48.0577 16.2407 C 47.5649 16.9395 46.8337 17.2837 45.903 17.2837 C 44.9709 17.2837 44.2616 16.9556 43.7465 16.2983 C 43.368 15.8164 43.1252 15.1006 43.1252 14.0779 L 43.1252 10.7075 C 43.1252 9.6792 43.3462 8.884 43.7246 8.3975 C 44.2399 7.739 44.9492 7.3906 45.8588 7.3906 C 46.7524 7.3906 47.4619 7.739 47.9612 8.3975 C 48.3336 8.884 48.5407 9.6362 48.5407 10.665 L 48.5411 12.6335 L 44.995 12.6335 L 44.995 14.363 C 44.9889 15.2515 45.2472 15.6987 45.8588 15.6987 Z" fill="currentColor"/>
-                </svg></a></li>
-            </ul>
-            -->
+    <div class="footer-links">
+        <div class="footer-logo-languageswitch">
+            <a-logo namespace="logo-default-" namespace-fallback src="../../../../../src/img/logo/westside.png"
+                href="/"></a-logo>
+            <m-language-switcher namespace="language-switcher-default-">
+                <ul>
+
+                    <li>
+                        <a class="languagenavigation__languagelink" href="/de-ch">de</a>
+                    </li>
+                    <li>
+                        <a class="languagenavigation__languagelink" href="/fr-ch">fr</a>
+                    </li>
+                </ul>
+
+                <style>
+                    :host {
+                        display: block !important;
+                        margin: 0 !important;
+                    }
+
+                    :host ul {
+                        --language-switcher-default-ul-margin: var(--language-switcher-default-ul-margin-custom);
+                    }
+                </style>
+            </m-language-switcher>
         </div>
+        <ul>
+            <li>
+                <a href="/bernaqua/infos/partner">
+                    Partner
+                </a>
+            </li>
+            <li>
+                <a href="/bernaqua/infos/agb">
+                    AGB
+                </a>
+            </li>
+            <li>
+                <a href="/bernaqua/infos/hausordnung">
+                    Hausordnung
+                </a>
+            </li>
+            <li>
+                <a href="/bernaqua/infos/werte-ethik-code">
+                    Werte- und Ethik-Code
+                </a>
+            </li>
+            <li>
+                <a href="/bernaqua/infos/impressum">
+                    Impressum
+                </a>
+            </li>
+            <li>
+                <a href="/bernaqua/infos/datenschutz">
+                    Datenschutz
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    Cookie-Einstellungen
+                </a>
+            </li>
+            <li class="copyright">
+                &copy; 2025 Bernaqua
+            </li>
+        </ul>
     </div>
-</o-footer>
+</bernaqua-o-footer>

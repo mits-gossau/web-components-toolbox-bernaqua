@@ -1,5 +1,5 @@
 // @ts-check
-import { Shadow } from '/src/es/components/web-components-toolbox/src/es/components/prototypes/Shadow.js'
+import { Shadow } from '../../web-components-toolbox/src/es/components/prototypes/Shadow.js'
 
 /* global self */
 /* global MutationObserver */
@@ -340,6 +340,7 @@ export default class Header extends Shadow() {
         }
         :host > header > ${this.getAttribute('bernaqua-m-navigation') || 'bernaqua-m-navigation'}.open {
           display: block;
+          margin-top: -1px;
         }
         :host > header.open > ${this.getAttribute('bernaqua-m-navigation') || 'bernaqua-m-navigation'} {
           animation: open .3s ease-out;
