@@ -1,4 +1,6 @@
 :host {
+  --button-primary-color: var(--m-white);
+  --button-primary-font-family: var(--font-family-bold);
   --details-default-icon-right-summary-child-color-hover-custom: var(--m-white);
   --footer-default-a-color: var(--color-black);
   --footer-default-a-color-hover: var(--color-black);
@@ -11,6 +13,7 @@
   --footer-default-content-spacing: var(--content-spacing);
   --footer-default-copyright-font-size: 0.9rem;
   --footer-default-copyright-font-size-mobile: 0.9rem;
+  --footer-default-copyright-margin: auto auto auto 0;
   --footer-default-a-font-size: 1.2rem;
   --footer-default-a-font-size-mobile: 1.2rem;
   --footer-default-gap: var(--footer-default-gap-custom, var(--content-spacing));
