@@ -128,8 +128,8 @@
   --details-default-border-top-custom: 1px solid var(--color-primary);
   --details-default-summary-border-bottom-open-custom: none;
 
-  --any-margin-top-first-child: 52px;
-  --any-margin-top-first-child-mobile: 42px;
+  --any-margin-top-first-child: 0;
+  --any-margin-top-first-child-mobile: 0;
 
   /* custom BERNAQUA-specific variables */
     --color-info: #194393;

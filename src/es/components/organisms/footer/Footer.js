@@ -471,12 +471,29 @@ export default class Footer extends Shadow() {
         height: 1.625rem;
         width: auto;
       }
-      :host a-button {
-        --button-primary-background-color: var(--footer-default-button-background-color);
-        --button-primary-background-color-hover: var(--footer-default-button-background-color-hover);
-        --button-primary-width: var(--footer-default-button-width);
-        width: var(--footer-default-button-width);
+      :host a.button {
+        align-items: var(--button-primary-align-items, center);
+        background-color: var(--footer-default-button-background-color);
+        border-radius: var(--button-primary-border-radius, 0.5em);
+        border: var(--button-primary-border-width, 0px) solid var(--button-primary-border-color, transparent);
+        color: var(--button-primary-color, black);
+        cursor: var(--button-primary-cursor, pointer);
+        display: var(--button-primary-display, flex);
+        font-family: var(--button-primary-font-family, unset);
+        font-size: var(--button-primary-font-size, 1em);
+        font-weight: var(--button-primary-font-weight, 400);
+        height: var(--button-primary-height, auto);
+        justify-content: var(--button-primary-justify-content, center);
         margin: var(--footer-default-button-margin);
+        outline: var(--button-primary-outline, none);
+        padding: var(--button-primary-padding, calc(0.75em - var(--button-primary-border-width, 0px)) calc(1.5em - var(--button-primary-border-width, 0px)));
+        touch-action: manipulation;
+        transition: var(--button-primary-transition, background-color 0.3s ease-out, border-color 0.3s ease-out, color 0.3s ease-out);
+        width: var(--footer-default-button-width);
+      }
+      :host a.button:hover {
+        background-color: var(--footer-default-button-background-color-hover);
+        text-decoration: none;
       }
     `
   }
