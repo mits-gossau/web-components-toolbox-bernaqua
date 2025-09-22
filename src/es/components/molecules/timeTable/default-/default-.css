@@ -1,0 +1,172 @@
+/**
+  * Variables naming rule: --{selector aka component aka namespace}-{css property}-{pseudo class or media query name} eg. --p-background-color-hover 
+  * NOTE: Within the component don't use any name spacing eg. component header don't use --header-default-color just use --color the namespace can be added by the Shadow as an html attribute
+  * - if a component holds other components or nodes you can declare or remap classes eg. :host > h1 {--color: var(--h1-color, white);}
+  * - if a component holds other components you should share the attribute namespace with its children
+  */
+
+:host {
+  --timetable-background: var(--timetable-background-custom, none);
+  --timetable-color: var(--timetable-color-custom, black);
+  --timetable-header-background: var(--timetable-header-background-custom);
+  --timetable-header-color: var(--timetable-header-color-custom, var(--timetable-color, black));
+  --timetable-time-column-background: var(--timetable-time-column-background-custom, var(--background-color, white));
+  --timetable-time-column-color: var(--timetable-time-column-color-custom, var(--timetable-color, black));
+  --timetable-border: var(--timetable-border-custom, 1px solid black);
+  --timetable-cell-padding: var(--timetable-td-padding-custom, 0.5em);
+  --timetable-buttons-justify-content: var(--timetable-buttons-justify-content-custom, space-between);
+
+  --button-primary-padding: 0.5em 0.75em;
+}
+
+:host .button-group {
+  justify-content: var(--timetable-buttons-justify-content);
+}
+
+:host .button-group :first-child {
+  margin-right: 0.5em;
+}
+
+:host .timetable {
+  overflow-x: auto;
+  margin: var(--content-spacing) 0;
+}
+
+:host .timetable>table {
+  background: var(--timetable-background);
+  color: var(--timetable-color);
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+:host .timetable>table th {
+  font-family: var(--font-family-bold);
+  color: var(--timetable-header-color);
+  border-top: var(--timetable-border);
+  border-right: var(--timetable-border);
+  border-bottom: var(--timetable-border);
+  box-sizing: border-box;
+  text-wrap: nowrap;
+}
+
+:host .timetable>table th:not(:first-child),
+:host .timetable>table tr th:first-child:empty {
+  border-color: var(--timetable-header-background);
+  background: var(--timetable-header-background);
+}
+
+:host .timetable>table td {
+  border-top: 0;
+  border-right: var(--timetable-border);
+  border-bottom: var(--timetable-border);
+  border-left: 0;
+}
+
+:host .timetable>table td {
+  vertical-align: baseline;
+}
+
+:host .timetable>table th,
+:host .timetable>table td {
+  padding: var(--timetable-cell-padding);
+}
+
+:host .timetable>table tr th:first-child,
+:host .timetable>table tr td:first-child {
+  font-family: var(--font-family-bold);
+  background: var(--timetable-time-column-background);
+  color: var(--timetable-time-column-color);
+  position: sticky;
+  left: 0;
+  border-left: var(--timetable-border);
+}
+
+:host .timetable>table tr th:first-child .text,
+:host .timetable>table tr td:first-child .text {
+  font-family: var(--font-family);
+}
+
+:host .timetable>table .cell {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+
+:host .timetable>table .cell.bigger-image .text {
+  min-width: 120px;
+}
+
+:host .timetable>table .cell.bigger-image img {
+  max-width: 100px;
+}
+
+/* :host .timetable>table .cell .text {
+  min-width: 100px;
+} */
+
+:host .timetable>table .cell .text * {
+  margin: 0;
+}
+
+:host .timetable>table .cell .text h4 {
+  font-family: var(--font-family-bold);
+  text-wrap: nowrap;
+}
+
+:host .timetable>table img {
+  object-fit: contain;
+  max-width: 40px;
+  max-height: 100%;
+  margin-left: 0.8em;
+}
+
+:host .key {
+  flex-wrap: wrap;
+  /* flex-direction: column; */
+}
+
+:host .key,
+:host .key-item {
+  display: flex;
+  align-items: center;
+}
+
+:host .key img {
+  object-fit: contain;
+  max-width: 30px;
+  max-height: 100%;
+  margin-left: 0.6em;
+}
+
+
+:host .key>*:not(:empty) {
+  padding: 0.1em 0.4em;
+}
+
+:host .key>*:not(:empty) {
+  margin-right: var(--content-spacing);
+  margin-bottom: var(--content-spacing);
+}
+
+:host .accent-1 {
+  background: var(--timetable-accent-1) !important;
+}
+
+:host .accent-2 {
+  background: var(--timetable-accent-2) !important;
+}
+
+:host .accent-3 {
+  background: var(--timetable-accent-3) !important;
+}
+
+:host .accent-4 {
+  background: var(--timetable-accent-4) !important;
+}
+
+@media only screen and (max-width: _max-width_) {
+  :host .key {
+    /* flex-direction: column;
+    align-items: start; */
+  }
+}
