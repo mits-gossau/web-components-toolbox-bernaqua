@@ -102,6 +102,10 @@
   --language-switcher-default-ul-margin-mobile: 0 0 0 0;
 
   --emotion-pictures-general-h2-color: var(--m-white);
+  --emotion-pictures-with-video-text-top-custom: 0;
+  --emotion-pictures-with-video-text-left-custom: 0;
+  --emotion-pictures-with-video-text-right-custom: 0;
+
   --emotion-carousel-default-color-hover-custom: var(--m-white);
   --emotion-carousel-default-any-margin-top-first-child-custom: 0;
   --emotion-carousel-default-any-margin-top-first-child-mobile-custom: 0;
@@ -145,6 +149,7 @@
   --table-default-header-color-custom: var(--color-secondary);
   --table-default-border-custom: 1px solid var(--color-secondary);
   --table-default-header-border-custom: 2px solid var(--color-secondary);
+  --table-default-td-padding-custom: 1.2em 0.4em;
 
   --table-memberships-color-custom: var(--color-black);
   --table-memberships-background-custom: var(--color-secondary);

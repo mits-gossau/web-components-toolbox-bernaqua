@@ -61,6 +61,7 @@
 :host .table>table tr th:first-child:empty {
   border-color: var(--table-default-header-background);
   background: var(--table-default-header-background);
+  text-align: end;
 }
 
 :host .table>table th,
@@ -80,6 +81,10 @@
   color: var(--table-default-time-column-color);
   position: sticky;
   left: 0;
+}
+
+:host .table>table td:not(:first-child) {
+  text-align: end;
 }
 
 :host .table>table td * {

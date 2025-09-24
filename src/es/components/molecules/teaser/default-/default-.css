@@ -20,7 +20,7 @@
   --teaser-default-figcaption-display: flex;
   --teaser-default-figcaption-flex-direction: column;
   --teaser-default-figcaption-justify-content: var(--teaser-default-figcaption-justify-content-custom, flex-end);
-  --teaser-default-figcaption-padding: 1.5rem;
+  --teaser-default-figcaption-padding: 0.8rem;
   --teaser-default-figcaption-background-color-hover: var(--teaser-default-background-color-hover-custom, var(--teaser-default-background-color));
   --teaser-default-figcaption-background-color: var(--teaser-default-figcaption-background-color-custom, var(--teaser-default-background-color));
 }
