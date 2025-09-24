@@ -33,6 +33,7 @@
 }
 
 :host .table>table {
+  width: 100%;
   background: var(--table-timetable-background);
   color: var(--table-timetable-color);
   border-collapse: separate;

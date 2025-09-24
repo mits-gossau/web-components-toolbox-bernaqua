@@ -33,6 +33,7 @@
 }
 
 :host .table>table {
+  width: 100%;
   background: var(--table-memberships-background);
   color: var(--table-memberships-color);
   border-collapse: separate;

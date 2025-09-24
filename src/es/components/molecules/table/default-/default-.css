@@ -34,6 +34,7 @@
 }
 
 :host .table>table {
+  width: 100%;
   background: var(--table-default-background);
   color: var(--table-default-color);
   border-collapse: separate;
