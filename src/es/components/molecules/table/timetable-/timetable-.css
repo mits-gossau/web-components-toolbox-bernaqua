@@ -55,17 +55,6 @@
   background: var(--table-timetable-header-background);
 }
 
-:host .table>table td {
-  border-top: 0;
-  border-right: var(--table-timetable-border);
-  border-bottom: var(--table-timetable-border);
-  border-left: 0;
-}
-
-:host .table>table td[rowspan] {
-  vertical-align: baseline;
-}
-
 :host .table>table th,
 :host .table>table td {
   padding: var(--table-timetable-cell-padding);
@@ -85,6 +74,17 @@
 :host .table>table tr th:first-child .text,
 :host .table>table tr td:first-child .text {
   font-family: var(--font-family);
+}
+
+:host .table>table td {
+  border-top: 0;
+  border-right: var(--table-timetable-border);
+  border-bottom: var(--table-timetable-border);
+  border-left: 0;
+}
+
+:host .table>table td[rowspan] {
+  vertical-align: baseline;
 }
 
 :host .table>table .cell {
