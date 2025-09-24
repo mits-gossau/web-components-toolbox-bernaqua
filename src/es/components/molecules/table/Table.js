@@ -10,20 +10,30 @@ import { Shadow } from '../../web-components-toolbox/src/es/components/prototype
 export default class Table extends Shadow() {
   constructor(options = {}, ...args) {
     super({ importMetaUrl: import.meta.url, ...options }, ...args);
+
+    this.forwardsNavigationButtonListener = (event) => {
+      this.scrollToNextColumn(true);
+    }
+
+    this.backwardsNavigationButtonListener = (event) => {
+      this.scrollToNextColumn(false);
+    }
+
+    this.windowResizeListener = (event) => {
+      this.css = /* css */`
+      :host .button-group {
+        ${this.table.scrollWidth > this.table.clientWidth ? 'display: flex' : ' display: none'};
+      }`
+    }
   }
 
   connectedCallback() {
     if (this.shouldRenderCSS()) this.renderCSS();
     if (this.shouldRenderHTML()) this.renderHTML();
 
-    this.aButtonBackward?.addEventListener('click', () => this.scrollToNextColumn(false));
-    this.aButtonForward?.addEventListener('click', () => this.scrollToNextColumn(true));
-    window.addEventListener('resize', () => {
-      this.css = /* css */`
-      :host .button-group {
-        ${this.table.scrollWidth > this.table.clientWidth ? 'display: flex' : ' display: none'};
-      }`
-    });
+    this.aButtonBackward?.addEventListener('click', this.backwardsNavigationButtonListener);
+    this.aButtonForward?.addEventListener('click', this.forwardsNavigationButtonListener);
+    window.addEventListener('resize', this.windowResizeListener);
 
     setTimeout(() => {
       const timeColumnWidth = this.tableHeaders[0].getBoundingClientRect().width;
@@ -34,9 +44,9 @@ export default class Table extends Shadow() {
   }
 
   disconnectedCallback() {
-    // TODO check if this is right
-    this.aButtonBackward?.removeEventListener('click', () => this.scrollToNextColumn(false));
-    this.aButtonForward?.removeEventListener('click', () => this.scrollToNextColumn(true));
+    this.aButtonBackward?.removeEventListener('click', this.backwardsNavigationButtonListener);
+    this.aButtonForward?.removeEventListener('click', this.forwardsNavigationButtonListener);
+    window.removeEventListener('resize', this.windowResizeListener);
   }
 
   /**
@@ -61,27 +71,9 @@ export default class Table extends Shadow() {
    * renders the css
    */
   renderCSS() {
-    let accentColorsCSS = "";
-    if (this.getAttribute('accent-colors')) {
-      const accentColors = this.getAttribute('accent-colors')?.split(" ");
-      accentColors?.forEach((color, i) => {
-        accentColorsCSS += /* css */`
-          :host .accent-${i + 1} {
-            background: ${color} !important;
-          }`
-      });
-    }
-
     this.css = /* css */`
-
       :host .button-group {
         ${this.table.scrollWidth > this.table.clientWidth ? 'display: flex' : ' display: none'};
-      }
-
-      ${accentColorsCSS}
-
-      @media only screen and (max-width: _max-width_) {
-        :host {}
       }
     `
 
@@ -118,22 +110,25 @@ export default class Table extends Shadow() {
    * @returns void
    */
   renderHTML() {
-    // this.html = 'Content rendered from Component: Example'
+    // this.html = ''
   }
 
   scrollToNextColumn(isScrollingForward = true) {
-    let columnPositions = [];
+    // gets all vertical border positions of columns
+    let columnBorders = [];
     for (let i = 0; i < this.tableHeaders.length; i++) {
       if (i === 0)
-        columnPositions.push(0)
+        columnBorders.push(0)
       else
-        columnPositions.push(columnPositions[i - 1] + this.tableHeaders[i].getBoundingClientRect().width)
+        columnBorders.push(columnBorders[i - 1] + this.tableHeaders[i].getBoundingClientRect().width)
     }
 
-    for (let i = 0; i < columnPositions.length - 1; i++) {
-      if (this.table.scrollLeft >= Math.round(columnPositions[i]) && this.table.scrollLeft < Math.round(columnPositions[i + 1])) {
-        const isCurrentColumnCutOff = Math.abs(this.table.scrollLeft - columnPositions[i]) >= 1;
-        const scrollDistanceLeft = isScrollingForward ? columnPositions[i + 1] : isCurrentColumnCutOff ? columnPositions[i] : columnPositions[i - 1];
+    // checks which column is in view on the left of the table, after the fixed first column
+    // if scrolling forwards: scroll to next column, if scrolling backwards: go to previous column or scroll current column into view if it's cut off
+    for (let i = 0; i < columnBorders.length - 1; i++) {
+      if (this.table.scrollLeft >= Math.round(columnBorders[i]) && this.table.scrollLeft < Math.round(columnBorders[i + 1])) {
+        const isCurrentColumnCutOff = Math.abs(this.table.scrollLeft - columnBorders[i]) >= 1;
+        const scrollDistanceLeft = isScrollingForward ? columnBorders[i + 1] : isCurrentColumnCutOff ? columnBorders[i] : columnBorders[i - 1];
 
         this.table.scroll({ left: scrollDistanceLeft, behavior: "smooth" })
         break;
