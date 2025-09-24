@@ -1,5 +1,4 @@
 :host {
-  /* --color: var(--teaser-default-color); */
   --teaser-default-a-picture-margin: var(--teaser-default-a-picture-margin-custom, 0);
   --teaser-default-a-picture-width: var(--teaser-default-a-picture-width-custom);
   --teaser-default-a-picture-figcaption-background-color-hover: var(--teaser-default-a-picture-figcaption-background-color-hover-custom, var(--teaser-default-background-color-hover-custom, var(--teaser-default-background-color)));
@@ -16,7 +15,6 @@
   --teaser-default-h2-margin: var(--teaser-default-h2-margin-custom);
   --teaser-default-h5-margin: 0 0 0.5em;
   --teaser-default-p-margin: var(--teaser-default-h2-margin-custom) 0 0.625em;
-  /* --teaser-default-p-font-size: 0.875em; */
   --teaser-default-p-line-height: var(--teaser-default-p-line-height-custom, 1.14em);
 
   --teaser-default-figcaption-display: flex;
@@ -25,15 +23,6 @@
   --teaser-default-figcaption-padding: 1.5rem;
   --teaser-default-figcaption-background-color-hover: var(--teaser-default-background-color-hover-custom, var(--teaser-default-background-color));
   --teaser-default-figcaption-background-color: var(--teaser-default-figcaption-background-color-custom, var(--teaser-default-background-color));
-  /* --teaser-default-figcaption-bg-color-equal-padding: var(--teaser-default-figcaption-bg-color-equal-padding-custom, 0.625em 0 0); */
-  /* --teaser-default-figcaption-transition: background-color 0.3s ease-out; */
-  /* --teaser-default-figcaption-any-transition: transform .45s .6s cubic-bezier(.17, .67, .28, 1), opacity .45s .4s cubic-bezier(.17, .67, .28, 1), opacity 0.3s .4s ease-out;
-  --teaser-default-figcaption-any-opacity: 0;
-  --teaser-default-figcaption-any-transform-origin: center top;
-  --teaser-default-figcaption-any-transform: var(--teaser-default-figcaption-any-transform-custom, perspective(400px) rotateX(-45deg)); */
-
-  /* --teaser-default-intersecting-figcaption-any-opacity: 1;
-  --teaser-default-intersecting-figcaption-any-transform: var(--teaser-default-intersecting-figcaption-any-transform-custom, perspective(400px) rotateX(0)); */
 }
 
 @media only screen and (max-width: _max-width_) {
