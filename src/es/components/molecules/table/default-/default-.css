@@ -1,0 +1,115 @@
+/**
+  * Variables naming rule: --{selector aka component aka namespace}-{css property}-{pseudo class or media query name} eg. --p-background-color-hover 
+  * NOTE: Within the component don't use any name spacing eg. component header don't use --header-default-color just use --color the namespace can be added by the Shadow as an html attribute
+  * - if a component holds other components or nodes you can declare or remap classes eg. :host > h1 {--color: var(--h1-color, white);}
+  * - if a component holds other components you should share the attribute namespace with its children
+  */
+
+:host {
+  --table-default-background: var(--table-default-background-custom, none);
+  --table-default-color: var(--table-default-color-custom, black);
+  --table-default-header-background: var(--table-default-header-background-custom, revert);
+  --table-default-header-color: var(--table-default-header-color-custom, var(--table-default-color, var(--color-secondary, black)));
+  --table-default-time-column-background: var(--table-default-time-column-background-custom, var(--background-color, white));
+  --table-default-time-column-color: var(--table-default-time-column-color-custom, var(--table-default-color, black));
+  --table-default-border: var(--table-default-border-custom, 1px solid black);
+  --table-default-header-border: var(--table-default-header-border-custom, 2px solid black);
+  --table-default-cell-padding: var(--table-default-td-padding-custom, 1em);
+  --table-default-buttons-justify-content: var(--table-default-buttons-justify-content-custom, space-between);
+
+  --button-primary-padding: 0.5em 0.75em;
+}
+
+:host .button-group {
+  justify-content: var(--table-default-buttons-justify-content);
+}
+
+:host .button-group :first-child {
+  margin-right: 0.5em;
+}
+
+:host .table {
+  overflow-x: auto;
+  margin: var(--content-spacing) 0;
+}
+
+:host .table>table {
+  background: var(--table-default-background);
+  color: var(--table-default-color);
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+:host .table>table th {
+  font-family: var(--font-family-bold);
+  color: var(--table-default-header-color);
+  border-bottom: var(--table-default-header-border);
+  box-sizing: border-box;
+  text-wrap: nowrap;
+}
+
+:host .table>table tr th:first-child {
+  font-family: var(--font-family-bold);
+  background: var(--table-default-time-column-background);
+  text-align: start;
+  position: sticky;
+  left: 0;
+}
+
+:host .table>table th:not(:first-child),
+:host .table>table tr th:first-child:empty {
+  border-color: var(--table-default-header-background);
+  background: var(--table-default-header-background);
+}
+
+:host .table>table th,
+:host .table>table td {
+  padding: var(--table-default-cell-padding);
+}
+
+:host .table>table td {
+  border-top: 0;
+  border-bottom: var(--table-default-border);
+  border-left: 0;
+  vertical-align: baseline;
+}
+
+:host .table>table tr td:first-child {
+  background: var(--table-default-time-column-background);
+  color: var(--table-default-time-column-color);
+  position: sticky;
+  left: 0;
+}
+
+:host .table>table td * {
+  margin: 0;
+}
+
+:host .table>table tr:hover,
+:host .table>table tr:hover th,
+:host .table>table tr:hover td {
+  background-color: var(--table-default-color-accent) !important;
+}
+
+:host(.accent-column-1) .table>table tr th:nth-child(1),
+:host(.accent-column-1) .table>table tr td:nth-child(1) {
+  background: var(--table-default-color-accent) !important;
+}
+
+:host(.accent-column-2) .table>table tr th:nth-child(2),
+:host(.accent-column-2) .table>table tr td:nth-child(2) {
+  background: var(--table-default-color-accent) !important;
+}
+
+:host(.accent-column-3) .table>table tr th:nth-child(3),
+:host(.accent-column-3) .table>table tr td:nth-child(3) {
+  background: var(--table-default-color-accent) !important;
+}
+
+:host(.accent-background),
+:host(.accent-background) .table>table tr th:first-child,
+:host(.accent-background) .table>table tr td:first-child {
+  background: var(--table-default-color-accent) !important;
+}
+
+@media only screen and (max-width: _max-width_) {}

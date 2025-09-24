@@ -1,0 +1,133 @@
+/**
+  * Variables naming rule: --{selector aka component aka namespace}-{css property}-{pseudo class or media query name} eg. --p-background-color-hover 
+  * NOTE: Within the component don't use any name spacing eg. component header don't use --header-default-color just use --color the namespace can be added by the Shadow as an html attribute
+  * - if a component holds other components or nodes you can declare or remap classes eg. :host > h1 {--color: var(--h1-color, white);}
+  * - if a component holds other components you should share the attribute namespace with its children
+  */
+
+:host {
+  --table-memberships-background: var(--table-memberships-background-custom, none);
+  --table-memberships-color: var(--table-memberships-color-custom, black);
+  --table-memberships-header-background: var(--table-memberships-header-background-custom);
+  --table-memberships-header-color: var(--table-memberships-header-color-custom, var(--table-memberships-color, black));
+  --table-memberships-time-column-background: var(--table-memberships-time-column-background-custom, var(--background-color, white));
+  --table-memberships-time-column-color: var(--table-memberships-time-column-color-custom, var(--table-memberships-color, black));
+  --table-memberships-border: var(--table-memberships-border-custom, 1px solid black);
+  --table-memberships-cell-padding: var(--table-memberships-td-padding-custom, 1rem);
+  --table-memberships-buttons-justify-content: var(--table-memberships-buttons-justify-content-custom, space-between);
+
+  --button-primary-padding: 0.5em 0.75em;
+}
+
+:host .button-group {
+  justify-content: var(--table-memberships-buttons-justify-content);
+}
+
+:host .button-group :first-child {
+  margin-right: 0.5em;
+}
+
+:host .table {
+  overflow-x: auto;
+  margin: var(--content-spacing) 0;
+}
+
+:host .table>table {
+  background: var(--table-memberships-background);
+  color: var(--table-memberships-color);
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+:host .table>table th {
+  font-family: var(--font-family-bold);
+  color: var(--table-memberships-header-color);
+  border-top: var(--table-memberships-border);
+  border-right: var(--table-memberships-border);
+  border-bottom: var(--table-memberships-border);
+  font-size: 1.3rem;
+  text-align: start;
+  box-sizing: border-box;
+  text-wrap: nowrap;
+}
+
+:host .table>table th:not(:first-child),
+:host .table>table tr th:first-child:empty {
+  border-color: var(--table-memberships-header-background);
+  background: var(--table-memberships-header-background);
+}
+
+:host .table>table th,
+:host .table>table td {
+  padding: var(--table-memberships-cell-padding);
+}
+
+:host .table>table tr th:first-child,
+:host .table>table tr td:first-child {
+  font-family: var(--font-family-bold);
+  background: var(--table-memberships-time-column-background);
+  color: var(--table-memberships-time-column-color);
+  position: sticky;
+  left: 0;
+  border-left: var(--table-memberships-border);
+  z-index: 2;
+}
+
+:host .table>table tr th:first-child .text,
+:host .table>table tr td:first-child .text {
+  font-family: var(--font-family);
+}
+
+:host .table>table td {
+  border-top: 0;
+  border-right: var(--table-memberships-border);
+  border-bottom: var(--table-memberships-border);
+  border-left: 0;
+  vertical-align: baseline;
+  /* Workaround to be able to set td content to height: 100% */
+  height: 1px;
+  /* Workaround to have equally sized columns */
+  width: 1%;
+}
+
+:host .table>table td a-button {
+  --button-primary-margin: 1rem 0 0 0;
+  --button-primary-width: 100%;
+  width: 100%;
+}
+
+:host .table>table .cell {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  height: 100%;
+}
+
+:host .table>table .cell .text * {
+  margin: 0;
+}
+
+:host .table>table .cell .text h4 {
+  font-family: var(--font-family-bold);
+  font-size: 1.3rem;
+  text-wrap: nowrap;
+}
+
+:host .table>table tr:first-of-type td {
+  background: var(--table-memberships-accent-1) !important;
+}
+
+:host .table>table tr:nth-of-type(2n) td {
+  background: var(--table-memberships-accent-2) !important;
+}
+
+:host .table>table tr:nth-of-type(3n) td {
+  background: var(--table-memberships-accent-3) !important;
+}
+
+:host .table>table tr:nth-of-type(4n) td {
+  background: var(--table-memberships-accent-4) !important;
+}
+
+@media only screen and (max-width: _max-width_) {}
