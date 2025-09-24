@@ -24,13 +24,6 @@ export default class Teaser extends Intersection() {
       this.setAttribute('data-href', this.getAttribute('href'))
       this.setAttribute('role', 'link')
     }
-    // TODO remove?
-    this.mouseoverListener = event => {
-      if (this.aArrow) this.aArrow.setAttribute('hover', 'true')
-    }
-    this.mouseoutListener = event => {
-      if (this.aArrow) this.aArrow.setAttribute('hover', '')
-    }
   }
 
   connectedCallback() {
@@ -53,18 +46,10 @@ export default class Teaser extends Intersection() {
       this.checkIfLink()
       this.hidden = false
     })
-    if (this.getAttribute('namespace') === 'teaser-overlay-') {
-      this.addEventListener('mouseover', this.mouseoverListener)
-      this.addEventListener('mouseout', this.mouseoutListener)
-    }
   }
 
   disconnectedCallback() {
     super.disconnectedCallback()
-    if (this.getAttribute('namespace') === 'teaser-overlay-') {
-      this.removeEventListener('mouseover', this.mouseoverListener)
-      this.removeEventListener('mouseout', this.mouseoutListener)
-    }
   }
 
   intersectionCallback(entries, observer) {
@@ -86,7 +71,6 @@ export default class Teaser extends Intersection() {
    * @return {Promise<void>}
    */
   renderCSS() {
-    if (this.getAttribute('namespace') === 'teaser-overlay-' && this.aArrow) this.aArrow.setAttribute('hover-set-by-outside', '')
     this.css = /* css */`
       :host {
         max-width: 100%;
@@ -233,76 +217,7 @@ export default class Teaser extends Intersection() {
       }
     ]
     switch (this.getAttribute('namespace')) {
-      // case 'teaser-tile-':
-      //   return this.fetchCSS([{
-      //     path: `${this.importMetaUrl}./tile-/tile-.css`, // apply namespace since it is specific and no fallback
-      //     namespace: false
-      //   }, ...styles], false)
-      // case 'teaser-tile-text-center-':
-      //   return this.fetchCSS([{
-      //     path: `${this.importMetaUrl}./tile-/tile-.css`, // apply namespace since it is specific and no fallback
-      //     namespace: false,
-      //     replaces: [{
-      //       pattern: '--teaser-tile-',
-      //       flags: 'g',
-      //       replacement: '--teaser-tile-text-center-'
-      //     }]
-      //   }, {
-      //     path: `${this.importMetaUrl}./tile-text-center-/tile-text-center-.css`, // apply namespace since it is specific and no fallback
-      //     namespace: false
-      //   }, ...styles], false)
-      // case 'teaser-tile-rounded-':
-      //   return this.fetchCSS([{
-      //     path: `${this.importMetaUrl}./tile-/tile-.css`, // apply namespace since it is specific and no fallback
-      //     namespace: false,
-      //     // harmonize the tile-.css namespace with teaser-tile-rounded-
-      //     replaces: [{
-      //       pattern: '--teaser-tile-',
-      //       flags: 'g',
-      //       replacement: '--teaser-tile-rounded-'
-      //     }]
-      //   }, {
-      //     path: `${this.importMetaUrl}./tile-rounded-/tile-rounded-.css`, // apply namespace since it is specific and no fallback
-      //     namespace: false
-      //   }, ...styles], false)
-      // case 'teaser-overlay-':
-      //   return this.fetchCSS([{
-      //     path: `${this.importMetaUrl}./overlay-/overlay-.css`, // apply namespace since it is specific and no fallback
-      //     namespace: false
-      //   }, ...styles], false)
-      // case 'teaser-overlay-top-':
-      //   return this.fetchCSS([{
-      //     path: `${this.importMetaUrl}./overlay-top-/overlay-top-.css`, // apply namespace since it is specific and no fallback
-      //     namespace: false
-      //   }, ...styles], false)
-      // case 'teaser-download-':
-      //   return this.fetchCSS([{
-      //     path: `${this.importMetaUrl}./download-/download-.css`, // apply namespace since it is specific and no fallback
-      //     namespace: false
-      //   }, ...styles], false)
-      // case 'teaser-round-':
-      //   return this.fetchCSS([{
-      //     path: `${this.importMetaUrl}./round-/round-.css`, // apply namespace since it is specific and no fallback
-      //     namespace: false
-      //   }, ...styles], false)
-      // case 'teaser-plain-':
-      //   return this.fetchCSS([{
-      //     path: `${this.importMetaUrl}./plain-/plain-.css`, // apply namespace since it is specific and no fallback
-      //     namespace: false
-      //   }, ...styles], false)
-      // case 'teaser-plainer-':
-      //   return this.fetchCSS([{
-      //     path: `${this.importMetaUrl}./plainer-/plainer-.css`, // apply namespace since it is specific and no fallback
-      //     namespace: false
-      //   }, ...styles], false)
-      // case 'teaser-text-image-':
-      //   return this.fetchCSS([{
-      //     path: `${this.importMetaUrl}./text-image-/text-image-.css`, // apply namespace since it is specific and no fallback
-      //     namespace: false
-      //   }, ...styles], false)
       case 'teaser-default-':
-        console.log("test: ", this.importMetaUrl);
-
         return this.fetchCSS([{
           path: `${this.importMetaUrl}./default-/default-.css`, // apply namespace since it is specific and no fallback
           namespace: false
@@ -331,10 +246,5 @@ export default class Teaser extends Intersection() {
 
   get aPicture() {
     return this.root.querySelector('a-picture')
-  }
-
-  // TODO remove?
-  get aArrow() {
-    return this.root.querySelector('a-arrow')
   }
 }
