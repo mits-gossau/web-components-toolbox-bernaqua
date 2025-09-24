@@ -37,7 +37,6 @@
 }
 
 :root {
-
   --background-color: var(--m-white);
   --color: #343434;
   --color-secondary: #194393;
@@ -141,8 +140,36 @@
   --facts-and-figures-default-text-color-custom: var(--color);
   --facts-and-figures-default-p-font-family: var(--font-family-bold);
 
-  /* custom Bernaqua-specific variables */
+  --table-default-color-accent: #DCE6F9;
+  --table-default-color-custom: var(--color-black);
+  --table-default-header-color-custom: var(--color-secondary);
+  --table-default-border-custom: 1px solid var(--color-secondary);
+  --table-default-header-border-custom: 2px solid var(--color-secondary);
 
+  --table-memberships-color-custom: var(--color-black);
+  --table-memberships-background-custom: var(--color-secondary);
+  --table-memberships-header-background-custom: var(--color-secondary);
+  --table-memberships-header-color-custom: var(--m-white);
+  --table-memberships-buttons-justify-content-custom: start;
+  --table-memberships-border-custom: 0px solid var(--table-memberships-accent-2);
+  --table-memberships-accent-1: #DCE6F9;
+  --table-memberships-accent-2: #CBDAF6;
+  --table-memberships-accent-3: #A8C1F0;
+  --table-memberships-accent-4: #96B6ED;
+
+  --table-timetable-color-custom: var(--color-black);
+  --table-timetable-header-background-custom: var(--color-secondary);
+  --table-timetable-header-color-custom: var(--m-white);
+  --table-timetable-time-column-background-custom: var(--table-timetable-accent-3);
+  --table-timetable-border-custom: 2px solid var(--table-timetable-accent-3);
+  --table-timetable-td-padding-custom: 0.7em;
+  --table-timetable-buttons-justify-content-custom: start;
+  --table-timetable-accent-1: #A8C1F0;
+  --table-timetable-accent-2: #CBDAF6;
+  --table-timetable-accent-3: #DCE6F9;
+  --table-timetable-accent-4: #EEF3FC;
+
+  /* custom Bernaqua-specific variables */
   --navigation-default-meta-background-color-custom: var(--color-grey);
   --navigation-default-meta-font-size: 1rem;
   --navigation-default-meta-font-weight: ;
