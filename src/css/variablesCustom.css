@@ -40,18 +40,15 @@
 
   --background-color: var(--m-white);
   --color: #343434;
-  --color-secondary: #a2b800;
-  --color-tertiary: #65253f;
-  --color-hover: #194393;
-  --color-active: var(--color-tertiary);
-  --color-disabled: #949494;
+  --color-secondary: #194393;
+  --color-tertiary: #e5eaf3;
+  --color-hover: #122f67;
+  --color-active: #122f67;
+  --color-disabled: #8c8c8c;
 
-  --color-gradient-0: linear-gradient(0deg, var(--color-secondary), var(--color-tertiary));
-  --color-gradient-45: linear-gradient(45deg, var(--color-secondary), var(--color-tertiary));
-
-  --font-family: UniversLTPro, HelveticaNowText, Helvetica, Arial, sans-serif;
-  --font-family-secondary: UniversLTProCondensed, HelveticaNowText, Helvetica, Arial, sans-serif;
-  --font-family-bold: UniversLTProBold, HelveticaNowTextBold, HelveticaNowText, Helvetica, Arial, sans-serif;
+  --font-family: HelveticaNeue, HelveticaNowText, Helvetica, Arial, sans-serif;
+  --font-family-secondary: HelveticaNeueLight, HelveticaNowText, Helvetica, Arial, sans-serif;
+  --font-family-bold: HelveticaNeueBold, HelveticaNowTextBold, HelveticaNowText, Helvetica, Arial, sans-serif;
 
   --h-color: var(--color-secondary);
   --h1-font-size: calc(1.5 * 1.75em);
@@ -79,7 +76,6 @@
   --header-default-a-menu-icon-background-color-custom: var(--color-info);
 
   --navigation-default-background-color-mobile: var(--m-white);
-  --navigation-default-font-family-custom: UniversLTProLight, var(--font-family-secondary);
   --navigation-default-section-margin-top-desktop: -8px;
   --navigation-default-color-custom: var(--color);
   --navigation-default-text-decoration-hover: underline;
@@ -89,7 +85,6 @@
 
   --footer-default-h4-color: var(--m-white);
   --footer-default-h4-font-size: 1.875rem;
-  --footer-default-ul-li-font-family: UniversLTPro, var(--font-family-secondary);
   --footer-default-a-font-size: .9rem;
   --footer-default-a-color: var(--m-white);
   --footer-default-a-color-hover: var(--m-white);
@@ -113,10 +108,6 @@
 
   --carousel-two-default-color-hover-custom: var(--m-white);
 
-  --details-default-h4-font-family: UniversLTProLight, var(--font-family-secondary);
-  --details-default-h4-font-size: 1.5625rem;
-  --details-default-summary-font-family: var(--font-family);
-  --details-default-border-top-custom: 1px solid var(--color-primary);
   --details-default-summary-border-bottom-open-custom: none;
 
   --any-margin-top-first-child: 0;
