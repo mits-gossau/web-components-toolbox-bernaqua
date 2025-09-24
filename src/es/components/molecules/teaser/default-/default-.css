@@ -1,0 +1,39 @@
+:host {
+  --teaser-default-a-picture-margin: var(--teaser-default-a-picture-margin-custom, 0);
+  --teaser-default-a-picture-width: var(--teaser-default-a-picture-width-custom);
+  --teaser-default-a-picture-figcaption-background-color-hover: var(--teaser-default-a-picture-figcaption-background-color-hover-custom, var(--teaser-default-background-color-hover-custom, var(--teaser-default-background-color)));
+  --teaser-default-a-picture-transform-hover: scale(1.02, 1.02);
+  --teaser-default-a-picture-transform-origin: center bottom;
+  --teaser-default-a-picture-transition: transform .3s ease-out;
+
+  --teaser-default-background-color: var(--teaser-default-background-color-custom, var(--background-color, var(--m-white)));
+  --teaser-default-border-radius: var(--teaser-default-border-radius-custom, 0);
+  --teaser-default-border-radius-mobile: var(--teaser-default-border-radius-mobile-custom, 0);
+  --teaser-default-color: var(--teaser-default-color-custom, var(--color));
+
+  --teaser-default-h-color: var(--teaser-default-color);
+  --teaser-default-h2-margin: var(--teaser-default-h2-margin-custom);
+  --teaser-default-h5-margin: 0 0 0.5em;
+  --teaser-default-p-margin: var(--teaser-default-h2-margin-custom) 0 0.625em;
+  --teaser-default-p-line-height: var(--teaser-default-p-line-height-custom, 1.14em);
+
+  --teaser-default-figcaption-display: flex;
+  --teaser-default-figcaption-flex-direction: column;
+  --teaser-default-figcaption-justify-content: var(--teaser-default-figcaption-justify-content-custom, flex-end);
+  --teaser-default-figcaption-padding: 1.5rem;
+  --teaser-default-figcaption-background-color-hover: var(--teaser-default-background-color-hover-custom, var(--teaser-default-background-color));
+  --teaser-default-figcaption-background-color: var(--teaser-default-figcaption-background-color-custom, var(--teaser-default-background-color));
+}
+
+@media only screen and (max-width: _max-width_) {
+  :host {
+    --teaser-default-p-font-size: var(--p-font-size-mobile, var(--p-font-size, 1em));
+    --teaser-default-p-line-height: var(--p-line-height-mobile, var(--p-line-height, var(--line-height, normal)));
+  }
+}
+
+:host figure .teaser-default-footer h5 {
+  margin: 0 0.5em var(--teaser-default-figcaption-padding) var(--teaser-default-figcaption-padding);
+  color: var(--color-secondary);
+  font-size: 1.3em;
+}
