@@ -50,18 +50,18 @@
   --font-family-secondary: HelveticaNeueLight, HelveticaNowText, Helvetica, Arial, sans-serif;
   --font-family-bold: HelveticaNeueBold, HelveticaNowTextBold, HelveticaNowText, Helvetica, Arial, sans-serif;
 
-  --h-color: var(--color-secondary);
-  --h1-font-size: calc(1.5 * 1.75em);
-  --h2-color: var(--color-tertiary);
-  --h2-font-family: var(--font-family);
-  --h6-font-size: var(--h2-font-size, 1.5em);
+  --bg-padding: 0.5em;
+  --bg-padding-top: 0.2em;
+  --bg-padding-bottom: var(--bg-padding-top);
 
   --button-primary-font-family-custom: var(--font-family-bold);
-  --button-primary-height: 2.8rem;
-  --button-primary-font-size: 1.25rem;
-  --button-primary-padding: 0.2rem 1rem 0 1rem;
-  --button-primary-border-radius: 2px;
-  --button-secondary-border-radius: 2px;
+  --button-primary-border-radius: 1px;
+  --button-secondary-font-family-custom: var(--font-family-bold);
+  --button-secondary-background-color-custom: var(--color-tertiary);
+  --button-secondary-background-color-disabled-custom: #e5eaf3;
+  --button-secondary-color-custom: var(--color-secondary);
+  --button-secondary-border-width-custom: 0px;
+  --button-secondary-border-radius: 1px;
 
   --header-default-background-color-custom: transparent;
   --header-default-header-position: static;
@@ -73,13 +73,14 @@
   --header-default-logo-width-custom: var(--logo-default-width-custom);
   --header-default-content-spacing-mobile: calc(50% - ((var(--header-default-logo-width-custom) / 2) + var(--logo-default-img-padding)));
   --header-default-margin-mobile-custom: var(--header-default-margin-custom);
-  --header-default-a-menu-icon-background-color-custom: var(--color-info);
+  --header-default-a-menu-icon-background-color-custom: var(--color-secondary);
 
   --navigation-default-background-color-mobile: var(--m-white);
   --navigation-default-section-margin-top-desktop: -8px;
   --navigation-default-color-custom: var(--color);
-  --navigation-default-text-decoration-hover: underline;
-  --navigation-default-text-decoration-active : none;
+  --navigation-default-text-decoration-hover: none;
+  --navigation-default-text-decoration-active: none;
+  --navigation-default-border-width: 3px;
 
   --search-input-padding: 0.25em;
 
@@ -88,7 +89,7 @@
   --footer-default-a-font-size: .9rem;
   --footer-default-a-color: var(--m-white);
   --footer-default-a-color-hover: var(--m-white);
-  --footer-default-invert-background-color-custom: var(--color-info);
+  --footer-default-invert-background-color-custom: var(--color-secondary);
   --footer-default-invert-a-color-hover-custom: var(--m-white);
   --footer-default-a-text-decoration: none;
   --footer-default-a-text-decoration-hover: underline;
@@ -109,22 +110,42 @@
   --carousel-two-default-color-hover-custom: var(--m-white);
 
   --details-default-summary-border-bottom-open-custom: none;
+  --details-default-summary-child-color-custom: var(--color-black);
+
+  --dialog-default-h2-font-size: 2.1em;
+  --dialog-default-h2-font-family: var(--font-family);
+  --dialog-default-h2-margin: 0 0 0.5em 0;
+  --dialog-default-padding: 2em;
+  --dialog-border: none;
+  --dialog-default-border-radius: 0px;
+
+  --teaser-default-box-shadow: 0 0 10px rgba(0, 0, 0, .4);
+
+  --teaser-plain-border-radius-custom: 0px;
+  --teaser-plain-border-radius-mobile-custom: 0px;
+
+  --teaser-round-h5-font-size: 1.1em;
+  --teaser-round-p-font-size: 1.5em;
+  --teaser-round-p-font-family: var(--font-family-secondary);
+  --teaser-round-p-text-align: center;
 
   --any-margin-top-first-child: 0;
   --any-margin-top-first-child-mobile: 0;
 
-  /* custom BERNAQUA-specific variables */
-    --color-info: #194393;
-    --color-aqua: #006893;
-    --color-fitness: #a2b800;
-    --color-wellness: #65253f;
-    --color-grey: #f2f2f2;
-    --color-black: #343434;
+  --facts-and-figures-default-width: fit-content;
+  --facts-and-figures-default-height: fit-content;
+  --facts-and-figures-default-numbers-number-flex-direction: column-reverse;
+  --facts-and-figures-default-h1-font-size: 2.3em;
+  --facts-and-figures-default-h1-margin: 0;
+  --facts-and-figures-default-h1-color: var(--color-secondary);
+  --facts-and-figures-default-text-color-custom: var(--color);
+  --facts-and-figures-default-p-font-family: var(--font-family-bold);
 
-    --navigation-default-meta-background-color-custom: var(--color-grey);
-    --navigation-default-meta-font-size: 1rem;
-    --navigation-default-meta-font-weight:
+  /* custom Bernaqua-specific variables */
 
+  --navigation-default-meta-background-color-custom: var(--color-grey);
+  --navigation-default-meta-font-size: 1rem;
+  --navigation-default-meta-font-weight: ;
 }
 
 @media only screen and (max-width: 1200px) {
