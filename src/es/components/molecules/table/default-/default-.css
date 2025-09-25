@@ -87,6 +87,11 @@
   text-align: end;
 }
 
+:host .table>table td.header-style {
+  font-family: var(--font-family-bold);
+  color: var(--table-default-header-color) !important;
+}
+
 :host .table>table td * {
   margin: 0;
 }
