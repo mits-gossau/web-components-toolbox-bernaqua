@@ -188,7 +188,6 @@ export default class Header extends Shadow() {
       }
       :host > header > ${this.getAttribute('bernaqua-m-navigation') || 'bernaqua-m-navigation'}{
         flex-grow: 1;
-        max-width: calc(var(--content-width, 55%) - var(--logo-width));
       }
       
       :host > header > *:first-child {
@@ -272,27 +271,23 @@ export default class Header extends Shadow() {
 
       :host > header > .logo {
         top: 0;
-        left: calc((100% - var(--content-width, 55%)) / 2);
         z-index: 1001;
         transition: top 0.2s ease-out;
-        background-color: var(--m-white);
       }
 
       :host > header > .logo a {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        height: 135px;
-        box-shadow: 0 0 8px 2px rgba(0, 0, 0, .2);
       }
 
       :host > header > .logo svg {
         width: 200px;
-        height: auto;
-        padding: 0 24px;
+        height: 150px;
       }
 
       :host > header > .logo.desktop {
+        position: fixed;
         display: block;
       }
            
@@ -436,7 +431,7 @@ export default class Header extends Shadow() {
         flex-direction: column;
         justify-content: center;
         height: 75px;
-        box-shadow: 0 0 8px 2px rgba(0, 0, 0, .2);
+        color: var(--color-secondary);
       }
 
       :host > header > .logo svg {
