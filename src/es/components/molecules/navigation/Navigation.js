@@ -378,6 +378,7 @@ export default class Navigation extends Mutation() {
         background-size: 40px;
         background-position-x: 30px;
         background-position-y: 40%;
+        transition: background-color 200ms linear, color 200ms linear;
       }
       :host > nav > ul > li.topnavigation section a-link:hover {
         --navigation-default-color-hover: var(--m-white);
@@ -388,6 +389,7 @@ export default class Navigation extends Mutation() {
         --navigation-default-color-mobile: var(--color-secondary);
       }
       :host > nav > ul > li.topnavigation > a-link {
+        --font-family: var(--font-family-bold);
         --navigation-default-color: var(--color-secondary);
         --navigation-default-color-active: var(--color-secondary);
         --navigation-default-color-mobile: var(--color-secondary);
@@ -426,8 +428,8 @@ export default class Navigation extends Mutation() {
         opacity: 0.54;
       }
       :host > nav > ul li > ${this.getAttribute('o-nav-wrapper') || 'o-nav-wrapper'} > section {
-        --a-link-content-spacing: 0;
-        --a-link-font-size: 1rem;
+        --a-link-content-spacing: 0.5rem 0.5rem 0.5rem 2.5rem;
+        --a-link-font-size: 1.25rem;
         --a-link-font-weight: normal;
         --justify-content: left;
         --align-items: normal;
@@ -454,7 +456,8 @@ export default class Navigation extends Mutation() {
       }
       :host > nav > ul li.open > ${this.getAttribute('o-nav-wrapper') || 'o-nav-wrapper'} > section > ul > li:first-child, :host > nav > ul li.open > ${this.getAttribute('o-nav-wrapper') || 'o-nav-wrapper'} > section > ul > li.bold {
         --a-link-font-family: var(--font-family-bold, var(--font-family, inherit));
-        --a-link-font-size: 1.25rem;
+        --a-link-font-size: 1.5rem;
+        --a-link-content-spacing: 0.5rem 0.5rem 0.5rem 0.5rem;
         padding-bottom: 0.875rem;
       }
       @media only screen and (max-width: ${self
@@ -492,7 +495,7 @@ export default class Navigation extends Mutation() {
           }
         }
         :host > nav {
-          background-color: var(--background-color, black);
+          background-color: var(--navigation-default-background-color-mobile);
           display: flex;
           flex-direction: column;
           justify-content: flex-start; /* must be up, otherwise the iphone hides it behind the footer bar */
@@ -509,7 +512,6 @@ export default class Navigation extends Mutation() {
         }
         :host > nav > ul:first-child {
           padding-top: 40px;
-          background-color: var(--navigation-default-background-color-mobile);
         }
         :host > nav > ul > li > a-arrow{
           padding-bottom: 2px;
@@ -600,6 +602,7 @@ export default class Navigation extends Mutation() {
           padding-bottom: 0;
         }
         :host > nav > ul > li.topnavigation > a-link {
+          --font-family: var(--font-family-bold);
           padding-left: 65px;
           background-position-x: 20px;
         }
