@@ -356,7 +356,7 @@ export default class Navigation extends Mutation() {
     // TODO: Migrated two Navigations into one, these should be cleaned and merged properly!
     this.css = /* css */`
       :host {
-        margin-top: 40px;
+        margin-top: 42px;
         margin-left: auto;
         max-width: 900px;
       }
@@ -373,14 +373,6 @@ export default class Navigation extends Mutation() {
         transition: all 0.1s ease;
         width: calc(100% / 3);
       }
-      :host > nav > ul > li.topnavigation > a-link {
-        --navigation-default-text-align: center;
-        display: block;
-        background-size: 40px;
-        background-position-x: 30px;
-        background-position-y: 40%;
-        transition: background-color 200ms linear, color 200ms linear;
-      }
       :host > nav > ul > li.topnavigation section a-link:hover {
         --navigation-default-color-hover: var(--m-white);
       }
@@ -394,6 +386,12 @@ export default class Navigation extends Mutation() {
         --navigation-default-color: var(--color-secondary);
         --navigation-default-color-active: var(--color-secondary);
         --navigation-default-color-mobile: var(--color-secondary);
+        --navigation-default-text-align: center;
+        display: block;
+        background-size: 40px;
+        background-position-x: 30px;
+        background-position-y: 40%;
+        transition: background-color 200ms linear, color 200ms linear;
       }
       :host > nav > ul > li.topnavigation > a-link:hover {
         background-color: var(--color-secondary);
@@ -605,6 +603,7 @@ export default class Navigation extends Mutation() {
         }
         :host > nav > ul > li.topnavigation > a-link {
           --font-family: var(--font-family-bold);
+          --navigation-default-text-align: left;
           padding-left: 65px;
           background-position-x: 20px;
         }
@@ -941,7 +940,7 @@ export default class Navigation extends Mutation() {
       this.css = /* css */`
         @media only screen and (min-width: calc(${this.mobileBreakpoint} + 1px)) {
           :host > nav > ul li > ${this.getAttribute('o-nav-wrapper') || 'o-nav-wrapper'} > section {
-            margin-top: calc(${this.root.querySelector('nav > ul').offsetHeight}px + 48px + var(--section-margin-top-desktop, ${Number(this.getAttribute('margin-top') || 1)}px));
+            margin-top: calc(${this.root.querySelector('nav > ul').offsetHeight}px + 47px + var(--section-margin-top-desktop, ${Number(this.getAttribute('margin-top') || 1)}px));
           }
         }
       `

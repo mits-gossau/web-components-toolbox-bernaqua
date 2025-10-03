@@ -287,7 +287,7 @@ export default class Header extends Shadow() {
       }
 
       :host > header > .logo.desktop {
-        position: fixed;
+        position: absolute;
         display: block;
       }
            
