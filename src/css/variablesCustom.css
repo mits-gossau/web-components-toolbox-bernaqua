@@ -132,8 +132,8 @@
   --teaser-round-p-font-family: var(--font-family-secondary);
   --teaser-round-p-text-align: center;
 
-  --any-margin-top-first-child: 0;
-  --any-margin-top-first-child-mobile: 0;
+  --any-margin-top-first-child: 70px;
+  --any-margin-top-first-child-mobile: 42px;
 
   --facts-and-figures-default-width: fit-content;
   --facts-and-figures-default-height: fit-content;
