@@ -62,6 +62,8 @@
   --button-secondary-border-width-custom: 0px;
   --button-secondary-border-radius: 1px;
 
+  --content-width: 1160px;
+
   --header-default-background-color-custom: transparent;
   --header-default-header-position: static;
   --header-default-width: calc(var(--header-default-content-width));
@@ -132,8 +134,8 @@
   --teaser-round-p-font-family: var(--font-family-secondary);
   --teaser-round-p-text-align: center;
 
-  --any-margin-top-first-child: 0;
-  --any-margin-top-first-child-mobile: 0;
+  --any-margin-top-first-child: 70px;
+  --any-margin-top-first-child-mobile: 42px;
 
   --facts-and-figures-default-width: fit-content;
   --facts-and-figures-default-height: fit-content;
@@ -182,6 +184,7 @@
 
 @media only screen and (max-width: 1200px) {
   :root {
+    --content-width: calc(100% - 40px);
     --header-default-logo-width-custom: var(--logo-default-width-mobile-custom);
     --header-default-height-custom: 80px;
     --header-default-margin-custom: 0;

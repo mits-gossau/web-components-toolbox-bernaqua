@@ -5,6 +5,7 @@
   --navigation-default-a-link-color: var(--navigation-default-color);
   --navigation-default-a-link-content-spacing-no-scroll: var(--navigation-default-a-link-content-spacing);
   --navigation-default-a-link-content-spacing: 1.1rem var(--content-spacing);
+  --navigation-default-font-family-custom: var(--font-family);
   --navigation-default-a-link-font-size-no-scroll: var(--navigation-default-a-link-font-size);
   --navigation-default-a-link-font-size: var(--header-default-a-font-size, var(--font-size));
   --navigation-default-a-link-text-transform: var(--navigation-default-a-link-text-transform-custom, none);

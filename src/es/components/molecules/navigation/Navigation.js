@@ -356,8 +356,9 @@ export default class Navigation extends Mutation() {
     // TODO: Migrated two Navigations into one, these should be cleaned and merged properly!
     this.css = /* css */`
       :host {
-        margin-top: 40px;
-        width: calc(100% - 248px);
+        margin-top: 42px;
+        margin-left: auto;
+        max-width: 900px;
       }
       :host > nav > ul {
         background-color: var(--background-color);
@@ -372,13 +373,6 @@ export default class Navigation extends Mutation() {
         transition: all 0.1s ease;
         width: calc(100% / 3);
       }
-      :host > nav > ul > li.topnavigation > a-link {
-        display: block;
-        padding-left: 65px;
-        background-size: 40px;
-        background-position-x: 30px;
-        background-position-y: 40%;
-      }
       :host > nav > ul > li.topnavigation section a-link:hover {
         --navigation-default-color-hover: var(--m-white);
       }
@@ -388,9 +382,16 @@ export default class Navigation extends Mutation() {
         --navigation-default-color-mobile: var(--color-secondary);
       }
       :host > nav > ul > li.topnavigation > a-link {
+        --font-family: var(--font-family-bold);
         --navigation-default-color: var(--color-secondary);
         --navigation-default-color-active: var(--color-secondary);
         --navigation-default-color-mobile: var(--color-secondary);
+        --navigation-default-text-align: center;
+        display: block;
+        background-size: 40px;
+        background-position-x: 30px;
+        background-position-y: 40%;
+        transition: background-color 200ms linear, color 200ms linear;
       }
       :host > nav > ul > li.topnavigation > a-link:hover {
         background-color: var(--color-secondary);
@@ -403,9 +404,6 @@ export default class Navigation extends Mutation() {
         --navigation-default-color-active:  var(--m-white);
         --navigation-default-color-mobile: var(--m-white);
         --navigation-default-section-background-color: var(--color-secondary);
-      }
-      :host > nav > ul:not(.open):not(:hover) > li.active:not(.search), :host > nav > ul > li:hover:not(.search) {
-        border-bottom: var(--border-width, 2px) solid var(--border-color, var(--color));
       }
       :host > nav > ul li:not(:hover).open {
         border-bottom: var(--border-width, 2px) solid var(--border-color, var(--color));
@@ -425,9 +423,12 @@ export default class Navigation extends Mutation() {
         display: block;
         opacity: 0.54;
       }
+      :host > nav > ul li > ${this.getAttribute('o-nav-wrapper') || 'o-nav-wrapper'} {
+        --any-1-width: 100% !important;
+      }
       :host > nav > ul li > ${this.getAttribute('o-nav-wrapper') || 'o-nav-wrapper'} > section {
-        --a-link-content-spacing: 0;
-        --a-link-font-size: 1rem;
+        --a-link-content-spacing: 0.4rem 0.5rem 0.4rem 2.5rem;
+        --a-link-font-size: 1.25rem;
         --a-link-font-weight: normal;
         --justify-content: left;
         --align-items: normal;
@@ -444,6 +445,7 @@ export default class Navigation extends Mutation() {
         padding: 2.5rem calc((100% - var(--content-width-custom, var(--content-width, 55%))) / 2);
         transition: all 0.2s ease;
         z-index: var(--li-ul-z-index, auto);
+        padding-left: calc(((100vw - var(--header-default-width, var(--width, 100%))) / 2) + (var(--header-default-width, var(--width, 100%)) - 900px));
       }
       :host > nav > ul li.open > ${this.getAttribute('o-nav-wrapper') || 'o-nav-wrapper'} > section {
         display: flex !important;
@@ -454,7 +456,8 @@ export default class Navigation extends Mutation() {
       }
       :host > nav > ul li.open > ${this.getAttribute('o-nav-wrapper') || 'o-nav-wrapper'} > section > ul > li:first-child, :host > nav > ul li.open > ${this.getAttribute('o-nav-wrapper') || 'o-nav-wrapper'} > section > ul > li.bold {
         --a-link-font-family: var(--font-family-bold, var(--font-family, inherit));
-        --a-link-font-size: 1.25rem;
+        --a-link-font-size: 1.5rem;
+        --a-link-content-spacing: 0.5rem 0.5rem 0.5rem 0.5rem;
         padding-bottom: 0.875rem;
       }
       @media only screen and (max-width: ${self
@@ -492,7 +495,7 @@ export default class Navigation extends Mutation() {
           }
         }
         :host > nav {
-          background-color: var(--background-color, black);
+          background-color: var(--navigation-default-background-color-mobile);
           display: flex;
           flex-direction: column;
           justify-content: flex-start; /* must be up, otherwise the iphone hides it behind the footer bar */
@@ -509,7 +512,6 @@ export default class Navigation extends Mutation() {
         }
         :host > nav > ul:first-child {
           padding-top: 40px;
-          background-color: var(--navigation-default-background-color-mobile);
         }
         :host > nav > ul > li > a-arrow{
           padding-bottom: 2px;
@@ -600,6 +602,8 @@ export default class Navigation extends Mutation() {
           padding-bottom: 0;
         }
         :host > nav > ul > li.topnavigation > a-link {
+          --font-family: var(--font-family-bold);
+          --navigation-default-text-align: left;
           padding-left: 65px;
           background-position-x: 20px;
         }
@@ -616,11 +620,9 @@ export default class Navigation extends Mutation() {
     /* Meta Navigation */
     this.css = /* css */`
       :host > nav > ul > li > .meta-nav {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 40px;
+        position: relative;
+        width: 900px;
+        top: -115px;
         background-color: var(--navigation-default-meta-background-color-custom);
       }
       :host > nav > ul > li > .meta-nav > div {
@@ -938,7 +940,7 @@ export default class Navigation extends Mutation() {
       this.css = /* css */`
         @media only screen and (min-width: calc(${this.mobileBreakpoint} + 1px)) {
           :host > nav > ul li > ${this.getAttribute('o-nav-wrapper') || 'o-nav-wrapper'} > section {
-            margin-top: calc(${this.root.querySelector('nav > ul').offsetHeight}px + 48px + var(--section-margin-top-desktop, ${Number(this.getAttribute('margin-top') || 1)}px));
+            margin-top: calc(${this.root.querySelector('nav > ul').offsetHeight}px + 47px + var(--section-margin-top-desktop, ${Number(this.getAttribute('margin-top') || 1)}px));
           }
         }
       `
