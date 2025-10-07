@@ -621,9 +621,10 @@ export default class Navigation extends Mutation() {
     this.css = /* css */`
       :host > nav > ul > li > .meta-nav {
         position: relative;
-        width: 900px;
+        width: 775px;
         top: -115px;
         background-color: var(--navigation-default-meta-background-color-custom);
+        z-index: 99999;
       }
       :host > nav > ul > li > .meta-nav > div {
         display: flex;

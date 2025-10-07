@@ -83,7 +83,12 @@
   --navigation-default-text-decoration-active: none;
   --navigation-default-border-width: 3px;
 
-  --search-input-padding: 0.25em;
+  --search-input-border-color-hover: transparent;
+  --search-input-border-color: transparent;
+  --search-input-font-size: 14px;
+  --search-input-padding: 0.1em 0.1em 0.1em 0.35em;
+  --search-input-width: 150px;  
+  --input-font-size: 12px;
 
   --footer-default-h4-color: var(--m-white);
   --footer-default-h4-font-size: 1.875rem;
@@ -189,6 +194,7 @@
     --header-default-height-custom: 80px;
     --header-default-margin-custom: 0;
     --navigation-default-margin-left: 0px;
+    --search-input-width-big: 100%;
   }
 }
 
