@@ -457,7 +457,7 @@ export default class Header extends Shadow() {
 
         :host msrc-login {
           top: 10px;
-          right: calc(((100vw - var(--content-width)) / 2) - 20px);
+          right: 0;
         }
       }
     `
