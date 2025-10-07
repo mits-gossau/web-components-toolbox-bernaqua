@@ -295,6 +295,13 @@ export default class Header extends Shadow() {
         display: none;
       }
 
+      :host msrc-login {
+				position: absolute;
+				width: auto !important;
+				top: -5px;
+				right: calc(((100vw - var(--content-width)) / 2) + 62px);
+			}
+
       @keyframes backgroundAnimation {
         0%{background-position-y:100%}
         100%{background-position-y:0%}
@@ -418,27 +425,27 @@ export default class Header extends Shadow() {
           order: 1;
         }
 
-      :host > header > .logo {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 1001;
-        transition: top 0.2s ease-out;
-      }
+        :host > header > .logo {
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+          z-index: 1001;
+          transition: top 0.2s ease-out;
+        }
 
-      :host > header > .logo a {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        height: 75px;
-        color: var(--color-secondary);
-      }
+        :host > header > .logo a {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          height: 75px;
+          color: var(--color-secondary);
+        }
 
-      :host > header > .logo svg {
-        width: 40px;
-        height: auto;
-        padding: 0 16px;
-      }
+        :host > header > .logo svg {
+          width: 40px;
+          height: auto;
+          padding: 0 16px;
+        }
 
         :host > header > .logo.desktop {
           display: none;
@@ -446,6 +453,11 @@ export default class Header extends Shadow() {
 
         :host > header > .logo.mobile {
           display: block;
+        }
+
+        :host msrc-login {
+          top: 10px;
+          right: calc(((100vw - var(--content-width)) / 2) - 20px);
         }
       }
     `
