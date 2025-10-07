@@ -194,6 +194,7 @@
     --header-default-height-custom: 80px;
     --header-default-margin-custom: 0;
     --navigation-default-margin-left: 0px;
+    --search-input-width-big: 100%;
   }
 }
 
