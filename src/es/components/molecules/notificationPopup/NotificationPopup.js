@@ -2,25 +2,25 @@ import { Prototype } from '../../web-components-toolbox/src/es/components/msrc/P
 import { Intersection } from '../../web-components-toolbox/src/es/components/prototypes/Intersection.js'
 
 export default class NotificationPopup extends Intersection(Prototype()) {
-  constructor (options = {}, ...args) {
+  constructor(options = {}, ...args) {
     super({
       importMetaUrl: import.meta.url,
-      intersectionObserverInit: { },
+      intersectionObserverInit: {},
       ...options
     }, ...args)
-      this.closeClickListener = event => {
-        this.setCookie(this.dataset.cookiename, this.dataset.cookielifetime);
-        this.style.display = 'none';
-      }
+    this.closeClickListener = event => {
+      this.setCookie(this.dataset.cookiename, this.dataset.cookielifetime);
+      this.style.display = 'none';
+    }
   }
 
-  connectedCallback () {
+  connectedCallback() {
     super.connectedCallback()
     if (this.shouldRenderCSS()) this.renderCSS();
     this.root.querySelector('.close').addEventListener('click', this.closeClickListener)
   }
 
-  disconnectedCallback () {
+  disconnectedCallback() {
     super.disconnectedCallback()
   }
 
@@ -29,14 +29,14 @@ export default class NotificationPopup extends Intersection(Prototype()) {
    *
    * @return {boolean}
    */
-  shouldRenderCSS () {
+  shouldRenderCSS() {
     return !this.root.querySelector(`${this.cssSelector} > style[_css]`)
   }
 
   /**
    * renders the css
    */
-  renderCSS () {
+  renderCSS() {
     this.css = /* css */`
       :host {
 
@@ -59,16 +59,11 @@ export default class NotificationPopup extends Intersection(Prototype()) {
         max-height: var(--max-height, 75vh);
         background-color: var(--background-color, #fff);
         padding: var(--padding);
-        margin: var(--margin, 16px);
       }
       :host .icon {
         display: flex;
         justify-content: center;
-        margin-top: calc(var(--padding)*-1);
-        transform: translateY(-50%);
-      }
-      :host .content {
-        margin-top: calc(var(--padding)*-1);
+        margin-bottom: var(--padding);
       }
       :host button.close {
         position: absolute;
@@ -93,7 +88,7 @@ export default class NotificationPopup extends Intersection(Prototype()) {
   /**
    * fetches the template
    */
-  fetchTemplate () {
+  fetchTemplate() {
     /** @type {import("../../web-components-toolbox/src/es/components/prototypes/Shadow.js").fetchCSSParams[]} */
     const styles = [
       {
@@ -117,14 +112,14 @@ export default class NotificationPopup extends Intersection(Prototype()) {
   }
 
   setCookie(cookiename, cookielifetime) {
-    var cookie = cookiename + "=" + "accepted;domain=" + this.getRootDomain() + "; max-age=" + cookielifetime*86400 + "; path=/";
+    var cookie = cookiename + "=" + "accepted;domain=" + this.getRootDomain() + "; max-age=" + cookielifetime * 86400 + "; path=/";
     document.cookie = cookie;
   }
- 
+
   getRootDomain() {
     var host = location.host.split('.').reverse();
     var toplevel = host[0].split(':')[0];
-    if(host.length === 1) {
+    if (host.length === 1) {
       return toplevel;
     }
 

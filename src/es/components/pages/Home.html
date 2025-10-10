@@ -29,9 +29,8 @@
                 <div>
                     <div></div>
                     <a-picture namespace="" alt="Slider Erlebnisbad2 1920X1080px"
-                        defaultSource="../img/emotion-pictures/slider-fitness2-1920x1080px.jpg"
-                        aspect-ratio="0.5625" sources-keep-query-aspect-ratio=""
-                        style="--img-object-position: center center" picture-load="">
+                        defaultSource="../img/emotion-pictures/slider-fitness2-1920x1080px.jpg" aspect-ratio="0.5625"
+                        sources-keep-query-aspect-ratio="" style="--img-object-position: center center" picture-load="">
                     </a-picture>
                 </div>
             </a-emotion-pictures>
@@ -47,20 +46,28 @@
     </div>
 </m-emotion-carousel>
 
-<bernaqua-m-notification-popup namespace="notification-popup-default-" data-cookiename="revision" data-cookielifetime="2">
+<bernaqua-m-notification-popup namespace="notification-popup-default-" data-cookiename="revision"
+    data-cookielifetime="2">
     <div class="outer">
         <div class="inner">
+            <button class="close">
+                <a-icon-mdx icon-name="X" size="1.5em"></a-icon-mdx>
+            </button>
+
             <div class="icon">
-                <a-picture namespace="picture-icon-" picture-load defaultSource="../img/notification-popup/info.svg" alt="info">
+                <a-picture namespace="picture-icon-" picture-load defaultSource="../img/notification-popup/info.svg"
+                    alt="info">
                 </a-picture>
             </div>
 
             <div class="content">
-                <h2>Die Revision im Bernaqua findet von Montag, 25. August bis und mit Freitag, 5. September 2025 statt.</h2>
-                <p>Während dieser Zeit bleiben alle Bereiche geschlossen. Gerne sind wir ab Samstag, 6. September 2025 wieder für Sie da.</p>
+                <h2>Die Revision im Bernaqua findet von Montag, 25. August bis und mit Freitag, 5. September 2025 statt.
+                </h2>
+                <p>Während dieser Zeit bleiben alle Bereiche geschlossen. Gerne sind wir ab Samstag, 6. September 2025
+                    wieder für Sie da.</p>
             </div>
 
-            <button class="close">X</button>
+            <a-button namespace="button-primary-" href="">Newsletter abonnieren</a-button>
         </div>
     </div>
 </bernaqua-m-notification-popup>
