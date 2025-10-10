@@ -53,6 +53,13 @@
   --bg-padding-top: 0.2em;
   --bg-padding-bottom: var(--bg-padding-top);
 
+  --h-font-family: var(--font-family);
+  --h1-font-family: var(--font-family-bold);
+  --h1-color: var(--color-secondary);
+  --h1-font-size: 2.8em;
+  --h2-font-size: 2.2em;
+  --h3-font-size: 1.5em;
+
   --button-primary-font-family-custom: var(--font-family-bold);
   --button-primary-border-radius: 1px;
   --button-secondary-font-family-custom: var(--font-family-bold);
@@ -87,7 +94,7 @@
   --search-input-border-color: transparent;
   --search-input-font-size: 14px;
   --search-input-padding: 0.1em 0.1em 0.1em 0.35em;
-  --search-input-width: 150px;  
+  --search-input-width: 150px;
   --input-font-size: 12px;
 
   --footer-default-h4-color: var(--m-white);
@@ -129,8 +136,13 @@
   --dialog-border: none;
   --dialog-default-border-radius: 0px;
 
+  --teaser-default-h2-font-size: 1.5em;
+  --teaser-default-h2-font-family: var(--font-family-bold);
+  --teaser-default-h5-font-family: var(--font-family-bold);
   --teaser-default-box-shadow: 0 0 10px rgba(0, 0, 0, .4);
+  --teaser-default-p-line-height-custom: 1.45;
 
+  --teaser-plain-h2-font-size: 1.5em;
   --teaser-plain-border-radius-custom: 0px;
   --teaser-plain-border-radius-mobile-custom: 0px;
 
