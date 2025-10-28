@@ -295,7 +295,7 @@ export default class Header extends Shadow() {
         display: none;
       }
 
-      :host msrc-login {
+      :host #msrc-profile-flyout {
 				position: absolute;
 				width: auto !important;
 				top: -5px;
@@ -455,7 +455,7 @@ export default class Header extends Shadow() {
           display: block;
         }
 
-        :host msrc-login {
+        :host #msrc-profile-flyout {
           top: 10px;
           right: 0;
         }
