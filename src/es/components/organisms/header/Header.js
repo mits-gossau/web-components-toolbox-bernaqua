@@ -469,16 +469,20 @@ export default class Header extends Shadow() {
           top: 10px;
           right: 0;
         }
+
+      :host #msrc-profile-flyout div[data-test-id="msrc-login-desktop"] {
+        margin-right: 0 !important;
+      }
       }
       @media only screen and (max-width: 1025px) {
         :host #msrc-profile-flyout {
-                right: 0 !important;
+          right: 0 !important;
         }
       }
       @media only screen and (max-width: 765px) {
         :host #msrc-profile-flyout > button[data-test-id="msrc-profile"] + div {
           width: 100% !important;
-          left: 1 !important;
+          left: 0 !important;
 		    }
       }
     `
