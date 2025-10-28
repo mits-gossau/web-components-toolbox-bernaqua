@@ -299,8 +299,18 @@ export default class Header extends Shadow() {
 				position: absolute;
 				width: auto !important;
 				top: -5px;
-				right: calc(((100vw - var(--content-width)) / 2) + 62px);
+				right: calc(((100vw - var(--content-width)) / 2) + 62px) !important;
 			}
+
+      :host #msrc-profile-flyout > button[data-test-id="msrc-profile"] + div {
+        width: 328px !important;
+        left: -288px !important;
+		  }
+
+      :host #msrc-profile-flyout div[data-test-id="msrc-login-desktop"] {
+        margin-top: 16px;
+        margin-right: -65px;
+      }
 
       @keyframes backgroundAnimation {
         0%{background-position-y:100%}
@@ -459,6 +469,17 @@ export default class Header extends Shadow() {
           top: 10px;
           right: 0;
         }
+      }
+      @media only screen and (max-width: 1025) {
+        :host #msrc-profile-flyout {
+                right: 0 !important;
+        }
+      }
+      @media only screen and (max-width: 765) {
+        :host #msrc-profile-flyout > button[data-test-id="msrc-profile"] + div {
+          width: 100% !important;
+          left: 1 !important;
+		    }
       }
     `
     return this.fetchTemplate()
