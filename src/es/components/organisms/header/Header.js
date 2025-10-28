@@ -470,12 +470,12 @@ export default class Header extends Shadow() {
           right: 0;
         }
       }
-      @media only screen and (max-width: 1025) {
+      @media only screen and (max-width: 1025px) {
         :host #msrc-profile-flyout {
                 right: 0 !important;
         }
       }
-      @media only screen and (max-width: 765) {
+      @media only screen and (max-width: 765px) {
         :host #msrc-profile-flyout > button[data-test-id="msrc-profile"] + div {
           width: 100% !important;
           left: 1 !important;
