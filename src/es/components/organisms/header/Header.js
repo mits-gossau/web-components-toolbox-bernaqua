@@ -454,7 +454,7 @@ export default class Header extends Shadow() {
         :host > header > .logo svg {
           width: 40px;
           height: auto;
-          padding: 0 16px;
+          padding: 0;
         }
 
         :host > header > .logo.desktop {
