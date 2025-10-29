@@ -295,12 +295,22 @@ export default class Header extends Shadow() {
         display: none;
       }
 
-      :host msrc-login {
+      :host #msrc-profile-flyout {
 				position: absolute;
 				width: auto !important;
 				top: -5px;
-				right: calc(((100vw - var(--content-width)) / 2) + 62px);
+				right: calc(((100vw - var(--content-width)) / 2) + 62px) !important;
 			}
+
+      :host #msrc-profile-flyout > button[data-test-id="msrc-profile"] + div {
+        width: 328px !important;
+        left: -288px !important;
+		  }
+
+      :host #msrc-profile-flyout div[data-test-id="msrc-login-desktop"] {
+        margin-top: 16px;
+        margin-right: -65px;
+      }
 
       @keyframes backgroundAnimation {
         0%{background-position-y:100%}
@@ -455,10 +465,25 @@ export default class Header extends Shadow() {
           display: block;
         }
 
-        :host msrc-login {
+        :host #msrc-profile-flyout {
           top: 10px;
           right: 0;
         }
+
+      :host #msrc-profile-flyout div[data-test-id="msrc-login-desktop"] {
+        margin-right: 0 !important;
+      }
+      }
+      @media only screen and (max-width: 1025px) {
+        :host #msrc-profile-flyout {
+          right: 0 !important;
+        }
+      }
+      @media only screen and (max-width: 765px) {
+        :host #msrc-profile-flyout > button[data-test-id="msrc-profile"] + div {
+          width: 100% !important;
+          left: 0 !important;
+		    }
       }
     `
     return this.fetchTemplate()
