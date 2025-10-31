@@ -49,6 +49,8 @@
   --font-family-secondary: HelveticaNeueLight, HelveticaNowText, Helvetica, Arial, sans-serif;
   --font-family-bold: HelveticaNeueBold, HelveticaNowTextBold, HelveticaNowText, Helvetica, Arial, sans-serif;
 
+  --content-width: 1160px;
+
   --bg-padding: 0.5em;
   --bg-padding-top: 0.2em;
   --bg-padding-bottom: var(--bg-padding-top);
@@ -57,6 +59,7 @@
   --h1-font-family: var(--font-family-bold);
   --h1-color: var(--color-secondary);
   --h1-font-size: 2.8em;
+  --h1-margin: 1.143em auto var(--h-margin-bottom, 1.143em);
   --h2-font-size: 2.2em;
   --h3-font-size: 1.5em;
 
@@ -68,8 +71,6 @@
   --button-secondary-color-custom: var(--color-secondary);
   --button-secondary-border-width-custom: 0px;
   --button-secondary-border-radius: 1px;
-
-  --content-width: 1160px;
 
   --header-default-background-color-custom: transparent;
   --header-default-header-position: static;
@@ -141,6 +142,7 @@
   --teaser-default-h5-font-family: var(--font-family-bold);
   --teaser-default-box-shadow: 0 0 10px rgba(0, 0, 0, .4);
   --teaser-default-p-line-height-custom: 1.45;
+  --teaser-default-figcaption-justify-content-custom: flex-start;
 
   --teaser-plain-h2-font-size: 1.5em;
   --teaser-plain-border-radius-custom: 0px;
