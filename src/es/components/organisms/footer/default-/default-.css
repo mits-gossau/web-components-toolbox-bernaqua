@@ -44,7 +44,7 @@
   --picture-footer-logo-img-height: min(35px, 10vw);
   --picture-store-logo-img-margin-mobile: var(--picture-store-logo-img-margin);
   --picture-store-logo-img-margin: 0;
-  --logo-default-height: 32px;
+  --logo-default-height: 40px;
   --logo-default-height-mobile: 30px;
   --ul-li-font-size: 1.5rem;
 }

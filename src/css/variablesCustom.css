@@ -67,6 +67,7 @@
   --button-primary-border-radius: 1px;
   --button-secondary-font-family-custom: var(--font-family-bold);
   --button-secondary-background-color-custom: var(--color-tertiary);
+  --button-secondary-background-color-hover-custom: var(--color-info-light-hover);
   --button-secondary-background-color-disabled-custom: #e5eaf3;
   --button-secondary-color-custom: var(--color-secondary);
   --button-secondary-border-width-custom: 0px;
@@ -164,6 +165,11 @@
   --facts-and-figures-default-h1-color: var(--color-secondary);
   --facts-and-figures-default-text-color-custom: var(--color);
   --facts-and-figures-default-p-font-family: var(--font-family-bold);
+
+  --tabs-container-color-active-custom: var(--color-secondary);
+  --tabs-container-background-color-active-custom: var(--color-tertiary);
+  --tabs-container-background-color-hover-custom: var(--color-tertiary);
+  --tabs-container-border-radius: 0;
 
   --table-default-color-accent: #DCE6F9;
   --table-default-color-custom: var(--color-black);
