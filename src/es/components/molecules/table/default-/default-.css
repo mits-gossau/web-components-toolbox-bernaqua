@@ -7,13 +7,13 @@
 
 :host {
   --table-default-background: var(--table-default-background-custom, none);
-  --table-default-color: var(--table-default-color-custom, black);
+  --table-default-color: var(--table-default-color-custom, var(--m-black, black));
   --table-default-header-background: var(--table-default-header-background-custom, revert);
-  --table-default-header-color: var(--table-default-header-color-custom, var(--table-default-color, var(--color-secondary, black)));
+  --table-default-header-color: var(--table-default-header-color-custom, var(--table-default-color, var(--color-secondary, var(--m-black, black))));
   --table-default-time-column-background: var(--table-default-time-column-background-custom, var(--background-color, white));
-  --table-default-time-column-color: var(--table-default-time-column-color-custom, var(--table-default-color, black));
-  --table-default-border: var(--table-default-border-custom, 1px solid black);
-  --table-default-header-border: var(--table-default-header-border-custom, 2px solid black);
+  --table-default-time-column-color: var(--table-default-time-column-color-custom, var(--table-default-color, var(--m-black, black)));
+  --table-default-border: var(--table-default-border-custom, 1px solid var(--m-black, black));
+  --table-default-header-border: var(--table-default-header-border-custom, 2px solid var(--m-black, black));
   --table-default-cell-padding: var(--table-default-td-padding-custom, 1em);
   --table-default-buttons-justify-content: var(--table-default-buttons-justify-content-custom, space-between);
 

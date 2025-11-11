@@ -184,6 +184,7 @@
   --table-memberships-header-color-custom: var(--m-white);
   --table-memberships-buttons-justify-content-custom: start;
   --table-memberships-border-custom: 0px solid var(--table-memberships-accent-2);
+  --table-memberships-titles-font-size-custom: 1.6rem;
   --table-memberships-accent-1: #DCE6F9;
   --table-memberships-accent-2: #CBDAF6;
   --table-memberships-accent-3: #A8C1F0;

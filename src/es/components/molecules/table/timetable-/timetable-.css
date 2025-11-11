@@ -7,12 +7,12 @@
 
 :host {
   --table-timetable-background: var(--table-timetable-background-custom, none);
-  --table-timetable-color: var(--table-timetable-color-custom, black);
+  --table-timetable-color: var(--table-timetable-color-custom, var(--m-black, black));
   --table-timetable-header-background: var(--table-timetable-header-background-custom);
-  --table-timetable-header-color: var(--table-timetable-header-color-custom, var(--table-timetable-color, black));
+  --table-timetable-header-color: var(--table-timetable-header-color-custom, var(--table-timetable-color, var(--m-black, black)));
   --table-timetable-time-column-background: var(--table-timetable-time-column-background-custom, var(--background-color, white));
-  --table-timetable-time-column-color: var(--table-timetable-time-column-color-custom, var(--table-timetable-color, black));
-  --table-timetable-border: var(--table-timetable-border-custom, 1px solid black);
+  --table-timetable-time-column-color: var(--table-timetable-time-column-color-custom, var(--table-timetable-color, var(--m-black, black)));
+  --table-timetable-border: var(--table-timetable-border-custom, 1px solid var(--m-black, black));
   --table-timetable-cell-padding: var(--table-timetable-td-padding-custom, 0.5em);
   --table-timetable-buttons-justify-content: var(--table-timetable-buttons-justify-content-custom, space-between);
 

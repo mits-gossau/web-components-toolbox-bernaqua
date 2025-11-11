@@ -35,12 +35,20 @@ export default class Table extends Shadow() {
     this.aButtonForward?.addEventListener('click', this.forwardsNavigationButtonListener);
     window.addEventListener('resize', this.windowResizeListener);
 
+    // timeout to make sure component has rendered
     setTimeout(() => {
       const timeColumnWidth = this.tableHeaders[0].getBoundingClientRect().width;
       this.tableHeaders.forEach(th => {
+        // set left scroll offset for columns because of fixed first column
         th.style.scrollMarginLeft = `${timeColumnWidth}px`;
       });
-    }, 600);
+
+      // determine if navigation buttons need to be shown
+      this.css = /* css */`
+      :host .button-group {
+        ${this.table.scrollWidth > this.table.clientWidth ? 'display: flex' : ' display: none'};
+      }`
+    }, 1000);
   }
 
   disconnectedCallback() {
