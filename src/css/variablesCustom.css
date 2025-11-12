@@ -67,7 +67,7 @@
   --button-primary-border-radius: 1px;
   --button-secondary-font-family-custom: var(--font-family-bold);
   --button-secondary-background-color-custom: var(--color-tertiary);
-  --button-secondary-background-color-hover-custom: var(--color-info-light-hover);
+  --button-secondary-background-color-hover-custom: #c2cee3;
   --button-secondary-background-color-disabled-custom: #e5eaf3;
   --button-secondary-color-custom: var(--color-secondary);
   --button-secondary-border-width-custom: 0px;
