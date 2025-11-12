@@ -127,6 +127,7 @@
   --carousel-two-default-color-hover-custom: var(--m-white);
 
   --details-default-summary-border-bottom-open-custom: none;
+  --details-default-a-color: var(--color-secondary);
 
   --dialog-default-h2-font-size: 2.1em;
   --dialog-default-h2-font-family: var(--font-family);
