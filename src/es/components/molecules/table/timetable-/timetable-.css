@@ -7,12 +7,13 @@
 
 :host {
   --table-timetable-background: var(--table-timetable-background-custom, none);
-  --table-timetable-color: var(--table-timetable-color-custom, var(--m-black, black));
+  --table-timetable-color: var(--table-timetable-color-custom, var(--color, black));
   --table-timetable-header-background: var(--table-timetable-header-background-custom);
-  --table-timetable-header-color: var(--table-timetable-header-color-custom, var(--table-timetable-color, var(--m-black, black)));
+  --table-timetable-header-color: var(--table-timetable-header-color-custom, var(--table-timetable-color, var(--color, black)));
   --table-timetable-time-column-background: var(--table-timetable-time-column-background-custom, var(--background-color, white));
-  --table-timetable-time-column-color: var(--table-timetable-time-column-color-custom, var(--table-timetable-color, var(--m-black, black)));
-  --table-timetable-border: var(--table-timetable-border-custom, 1px solid var(--m-black, black));
+  --table-timetable-time-column-color: var(--table-timetable-time-column-color-custom, var(--table-timetable-color, var(--color, black)));
+  --table-timetable-time-column-border-color: var(--table-timetable-time-column-border-color-custom, var(--color, black));
+  --table-timetable-border: var(--table-timetable-border-custom, 1px solid var(--color, black));
   --table-timetable-cell-padding: var(--table-timetable-td-padding-custom, 0.5em);
   --table-timetable-buttons-justify-content: var(--table-timetable-buttons-justify-content-custom, space-between);
 
@@ -24,7 +25,7 @@
 }
 
 :host .button-group :first-child {
-  margin-right: 0.5em;
+  margin-right: 0.8em;
 }
 
 :host .table {
@@ -69,7 +70,12 @@
   position: sticky;
   left: 0;
   border-left: var(--table-timetable-border);
+  border-bottom-color: var(--table-timetable-time-column-border-color);
   z-index: 2;
+}
+
+:host .table>table tr:last-child td:first-child {
+  border-bottom: var(--table-timetable-border);
 }
 
 :host .table>table tr th:first-child .text,
@@ -100,6 +106,7 @@
 :host .table>table .cell .text h4 {
   font-family: var(--font-family-bold);
   text-wrap: nowrap;
+  white-space: normal;
 }
 
 :host .table>table img {

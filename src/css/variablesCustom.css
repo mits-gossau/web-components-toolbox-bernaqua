@@ -110,8 +110,6 @@
   --footer-default-a-text-decoration-hover: underline;
 
   --language-switcher-default-a-font-size: 14px;
-  --language-switcher-default-a-color: var(--color-black);
-  --language-switcher-default-a-color-hover: var(--color-black);
   --language-switcher-default-a-text-decoration: none;
   --language-switcher-default-a-text-decoration-hover: underline;
   --language-switcher-default-ul-margin-custom: 0 0 0 0;
@@ -129,7 +127,6 @@
   --carousel-two-default-color-hover-custom: var(--m-white);
 
   --details-default-summary-border-bottom-open-custom: none;
-  --details-default-summary-child-color-custom: var(--color-black);
 
   --dialog-default-h2-font-size: 2.1em;
   --dialog-default-h2-font-family: var(--font-family);
@@ -172,13 +169,11 @@
   --tabs-container-border-radius: 0;
 
   --table-default-color-accent: #DCE6F9;
-  --table-default-color-custom: var(--color-black);
   --table-default-header-color-custom: var(--color-secondary);
   --table-default-border-custom: 1px solid var(--color-secondary);
   --table-default-header-border-custom: 2px solid var(--color-secondary);
   --table-default-td-padding-custom: 1.2em 0.4em;
 
-  --table-memberships-color-custom: var(--color-black);
   --table-memberships-background-custom: var(--color-secondary);
   --table-memberships-header-background-custom: var(--color-secondary);
   --table-memberships-header-color-custom: var(--m-white);
@@ -190,10 +185,10 @@
   --table-memberships-accent-3: #A8C1F0;
   --table-memberships-accent-4: #96B6ED;
 
-  --table-timetable-color-custom: var(--color-black);
   --table-timetable-header-background-custom: var(--color-secondary);
   --table-timetable-header-color-custom: var(--m-white);
   --table-timetable-time-column-background-custom: var(--table-timetable-accent-3);
+  --table-timetable-time-column-border-color-custom: var(--m-white);
   --table-timetable-border-custom: 2px solid var(--table-timetable-accent-3);
   --table-timetable-td-padding-custom: 0.7em;
   --table-timetable-buttons-justify-content-custom: start;
@@ -222,5 +217,8 @@
 @media only screen and (max-width: 768px) {
   :root {
     --header-default-height-custom: 70px;
+    --table-default-buttons-justify-content-custom: space-between;
+    --table-memberships-buttons-justify-content-custom: space-between;
+    --table-timetable-buttons-justify-content-custom: space-between;
   }
 }

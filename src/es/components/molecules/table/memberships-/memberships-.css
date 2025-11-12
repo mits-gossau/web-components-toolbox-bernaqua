@@ -7,12 +7,12 @@
 
 :host {
   --table-memberships-background: var(--table-memberships-background-custom, none);
-  --table-memberships-color: var(--table-memberships-color-custom, var(--m-black, black));
+  --table-memberships-color: var(--table-memberships-color-custom, var(--color, black));
   --table-memberships-header-background: var(--table-memberships-header-background-custom);
-  --table-memberships-header-color: var(--table-memberships-header-color-custom, var(--table-memberships-color, var(--m-black, black)));
+  --table-memberships-header-color: var(--table-memberships-header-color-custom, var(--table-memberships-color, var(--color, black)));
   --table-memberships-time-column-background: var(--table-memberships-time-column-background-custom, var(--background-color, white));
-  --table-memberships-time-column-color: var(--table-memberships-time-column-color-custom, var(--table-memberships-color, var(--m-black, black)));
-  --table-memberships-border: var(--table-memberships-border-custom, 1px solid var(--m-black, black));
+  --table-memberships-time-column-color: var(--table-memberships-time-column-color-custom, var(--table-memberships-color, var(--color, black)));
+  --table-memberships-border: var(--table-memberships-border-custom, 1px solid var(--color, black));
   --table-memberships-cell-padding: var(--table-memberships-td-padding-custom, 1.3rem);
   --table-memberships-buttons-justify-content: var(--table-memberships-buttons-justify-content-custom, space-between);
   --table-memberships-titles-font-size: var(--table-memberships-titles-font-size-custom, 1.5rem);
@@ -25,7 +25,7 @@
 }
 
 :host .button-group :first-child {
-  margin-right: 0.5em;
+  margin-right: 0.8em;
 }
 
 :host .table {
@@ -108,6 +108,8 @@
   background-color: var(--color-secondary);
   font-family: var(--font-family-bold);
   text-align: center;
+  text-wrap: nowrap;
+  transition: background-color 0.3s ease-out, border-color 0.3s ease-out, color 0.3s ease-out;
 }
 
 :host .table>table td a:hover {
