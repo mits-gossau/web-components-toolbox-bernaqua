@@ -229,13 +229,6 @@
         <table>
             <thead>
                 <tr>
-                    <th>
-                        <h2>Was darin enthalten ist</h2>
-                    </th>
-                    <th></th>
-                    <th></th>
-                </tr>
-                <tr>
                     <th>ab 16 Jahren</th>
                     <th>Tag</th>
                     <th>2 h</th>
@@ -243,7 +236,7 @@
             </thead>
             <tbody>
                 <tr>
-                    <td class="header-style">
+                    <td>
                         <p>Erwachsene</p>
                     </td>
                     <td>
@@ -255,7 +248,7 @@
                 </tr>
 
                 <tr>
-                    <td class="header-style">
+                    <td>
                         <p>Verlängerungstarif pro 3 Min.</p>
                     </td>
                     <td></td>
@@ -276,7 +269,7 @@
                 </tr>
 
                 <tr>
-                    <td class="header-style">
+                    <td>
                         <p>Zuschlag für einen zusätzlichen Bereich pro Eintritt (Sauna oder Erlebnisbad)</p>
                     </td>
                     <td>
@@ -292,7 +285,71 @@
 </bernaqua-m-table>
 <div class="spacer"></div>
 
-<bernaqua-m-table namespace="table-timetable-">
+<bernaqua-m-table namespace="table-default-" class="accent-background" tabindex="0">
+    <div class="button-group">
+        <a-button namespace="button-primary-" class="button-backward">◀</a-button>
+        <a-button namespace="button-primary-" class="button-forward">▶</a-button>
+    </div>
+
+    <div class="table">
+        <table>
+            <thead>
+                <tr>
+                    <th>
+                        <h2 style="text-align: left;">Was darin enthalten ist</h2>
+                    </th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>
+                        <h3 style="text-align: left;">Fitness</h3>
+                    </td>
+                    <td>
+                        <h3 style="text-align: left;">Sauna</h3>
+                    </td>
+                    <td>
+                        <h3 style="text-align: left;">Erlebnisbad</h3>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul class="checklist">
+                            <li style="text-align: left;">unbegrenztes Training</li>
+                            <li style="text-align: left;">Längere Öffnungszeiten als Tagesgäste</li>
+                            <li style="text-align: left;">Gratis isotonische Getränke</li>
+                            <li style="font-weight: bold; text-align: left;"><strong><a
+                                        href="https://www.bernaqua.ch/de-CH/fitness/groupfitness/Data/kursplaner">Über
+                                        70 abwechslungsreiche Kurse</a></strong></li>
+                            <li style="text-align: left;">4 Betreuungstermine inbegriffen</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul class="checklist">
+                            <li style="text-align: left;">Freien Zugang zum ganzen Sauna-Bereich&nbsp;</li>
+                            <li style="text-align: left;">Teilnahme an den Aufgusszeremonien</li>
+                            <li style="text-align: left;">Unbegrenzte Entspannung: jeden Tag von 9 bis 22 Uhr</li>
+                            <li style="text-align: left;">Einlass ohne Anstehen dank modernem Chiparmband</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul class="checklist">
+                            <li style="text-align: left;">Freien Zugang zum ganzen Erlebnisbad-Bereich</li>
+                            <li style="text-align: left;">So viele Aquafitness-Kurse wie Sie mögen</li>
+                            <li style="text-align: left;">Einlass ohne Anstehen dank modernem Chiparmband</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</bernaqua-m-table>
+<div class="spacer"></div>
+
+<bernaqua-m-table namespace="table-timetable-" class="title-wrap">
     <div class="button-group">
         <a-button namespace="button-primary-" class="button-backward">◀</a-button>
         <a-button namespace="button-primary-" class="button-forward">▶</a-button>

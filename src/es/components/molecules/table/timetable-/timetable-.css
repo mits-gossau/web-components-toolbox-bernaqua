@@ -1,10 +1,3 @@
-/**
-  * Variables naming rule: --{selector aka component aka namespace}-{css property}-{pseudo class or media query name} eg. --p-background-color-hover 
-  * NOTE: Within the component don't use any name spacing eg. component header don't use --header-default-color just use --color the namespace can be added by the Shadow as an html attribute
-  * - if a component holds other components or nodes you can declare or remap classes eg. :host > h1 {--color: var(--h1-color, white);}
-  * - if a component holds other components you should share the attribute namespace with its children
-  */
-
 :host {
   --table-timetable-background: var(--table-timetable-background-custom, none);
   --table-timetable-color: var(--table-timetable-color-custom, var(--color, black));
@@ -20,12 +13,14 @@
   --button-primary-padding: 0.5em 0.75em;
 }
 
-:host .button-group {
-  justify-content: var(--table-timetable-buttons-justify-content);
-}
-
-:host .button-group :first-child {
-  margin-right: 0.8em;
+:host strong,
+:host h1,
+:host h2,
+:host h3,
+:host h4,
+:host h5,
+:host h6 {
+  font-family: var(--font-family-bold);
 }
 
 :host .table {
@@ -33,33 +28,10 @@
   margin: var(--content-spacing) 0;
 }
 
-:host .table>table {
-  width: 100%;
-  background: var(--table-timetable-background);
-  color: var(--table-timetable-color);
-  border-collapse: separate;
-  border-spacing: 0;
-}
-
 :host .table>table th {
   font-family: var(--font-family-bold);
-  color: var(--table-timetable-header-color);
   border-top: var(--table-timetable-border);
   border-right: var(--table-timetable-border);
-  border-bottom: var(--table-timetable-border);
-  box-sizing: border-box;
-  text-wrap: nowrap;
-}
-
-:host .table>table th:not(:first-child),
-:host .table>table tr th:first-child:empty {
-  border-color: var(--table-timetable-header-background);
-  background: var(--table-timetable-header-background);
-}
-
-:host .table>table th,
-:host .table>table td {
-  padding: var(--table-timetable-cell-padding);
 }
 
 :host .table>table tr th:first-child,
@@ -84,13 +56,7 @@
 }
 
 :host .table>table td {
-  border-top: 0;
   border-right: var(--table-timetable-border);
-  border-bottom: var(--table-timetable-border);
-  border-left: 0;
-}
-
-:host .table>table td[rowspan] {
   vertical-align: baseline;
 }
 
@@ -106,6 +72,9 @@
 :host .table>table .cell .text h4 {
   font-family: var(--font-family-bold);
   text-wrap: nowrap;
+}
+
+:host(.title-wrap) .table>table .cell .text h4 {
   white-space: normal;
 }
 
@@ -133,14 +102,10 @@
   margin-left: 0.6em;
 }
 
-
-:host .key>*:not(:empty) {
-  padding: 0.1em 0.4em;
-}
-
 :host .key>*:not(:empty) {
   margin-right: var(--content-spacing);
   margin-bottom: var(--content-spacing);
+  padding: 0.1em 0.4em;
 }
 
 :host .accent-1 {

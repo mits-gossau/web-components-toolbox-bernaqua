@@ -1,10 +1,3 @@
-/**
-  * Variables naming rule: --{selector aka component aka namespace}-{css property}-{pseudo class or media query name} eg. --p-background-color-hover 
-  * NOTE: Within the component don't use any name spacing eg. component header don't use --header-default-color just use --color the namespace can be added by the Shadow as an html attribute
-  * - if a component holds other components or nodes you can declare or remap classes eg. :host > h1 {--color: var(--h1-color, white);}
-  * - if a component holds other components you should share the attribute namespace with its children
-  */
-
 :host {
   --table-memberships-background: var(--table-memberships-background-custom, none);
   --table-memberships-color: var(--table-memberships-color-custom, var(--color, black));
@@ -20,12 +13,14 @@
   --button-primary-padding: 0.5em 0.75em;
 }
 
-:host .button-group {
-  justify-content: var(--table-memberships-buttons-justify-content);
-}
-
-:host .button-group :first-child {
-  margin-right: 0.8em;
+:host strong,
+:host h1,
+:host h2,
+:host h3,
+:host h4,
+:host h5,
+:host h6 {
+  font-family: var(--font-family-bold);
 }
 
 :host .table {
@@ -33,35 +28,12 @@
   margin: var(--content-spacing) 0;
 }
 
-:host .table>table {
-  width: 100%;
-  background: var(--table-memberships-background);
-  color: var(--table-memberships-color);
-  border-collapse: separate;
-  border-spacing: 0;
-}
-
 :host .table>table th {
   font-family: var(--font-family-bold);
-  color: var(--table-memberships-header-color);
   border-top: var(--table-memberships-border);
   border-right: var(--table-memberships-border);
-  border-bottom: var(--table-memberships-border);
   font-size: var(--table-memberships-titles-font-size);
   text-align: start;
-  box-sizing: border-box;
-  text-wrap: nowrap;
-}
-
-:host .table>table th:not(:first-child),
-:host .table>table tr th:first-child:empty {
-  border-color: var(--table-memberships-header-background);
-  background: var(--table-memberships-header-background);
-}
-
-:host .table>table th,
-:host .table>table td {
-  padding: var(--table-memberships-cell-padding);
 }
 
 :host .table>table tr th:first-child,
@@ -82,10 +54,7 @@
 }
 
 :host .table>table td {
-  border-top: 0;
   border-right: var(--table-memberships-border);
-  border-bottom: var(--table-memberships-border);
-  border-left: 0;
   /* Workaround to be able to set td content to height: 100% */
   height: 1px;
   /* Workaround to have equally wide columns */
@@ -135,7 +104,6 @@
 :host .table>table td h4,
 :host .table>table td h5,
 :host .table>table td h6 {
-  font-family: var(--font-family-bold);
   font-size: var(--table-memberships-titles-font-size);
   text-wrap: nowrap;
 }

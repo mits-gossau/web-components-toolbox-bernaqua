@@ -20,10 +20,7 @@ export default class Table extends Shadow() {
     }
 
     this.windowResizeListener = (event) => {
-      this.css = /* css */`
-      :host .button-group {
-        ${this.table.scrollWidth > this.table.clientWidth ? 'display: flex' : ' display: none'};
-      }`
+      this.navigationButtons.style.display = this.table.scrollWidth > this.table.clientWidth ? 'flex' : 'none'
     }
   }
 
@@ -44,10 +41,7 @@ export default class Table extends Shadow() {
       });
 
       // determine if navigation buttons need to be shown
-      this.css = /* css */`
-      :host .button-group {
-        ${this.table.scrollWidth > this.table.clientWidth ? 'display: flex' : ' display: none'};
-      }`
+      this.navigationButtons.style.display = this.table.scrollWidth > this.table.clientWidth ? 'flex' : 'none'
     }, 1000);
   }
 
@@ -81,7 +75,43 @@ export default class Table extends Shadow() {
   renderCSS() {
     this.css = /* css */`
       :host .button-group {
-        ${this.table.scrollWidth > this.table.clientWidth ? 'display: flex' : ' display: none'};
+        justify-content: var(--buttons-justify-content);
+      }
+
+      :host .button-group :first-child {
+        margin-right: 0.8em;
+      }
+
+      :host .table > table {
+        width: 100%;
+        background: var(--background);
+        color: var(--color);
+        border-collapse: separate;
+        border-spacing: 0;
+      }
+
+      :host .table > table th {
+        color: var(--header-color);
+        border-bottom: var(--header-border);
+        box-sizing: border-box;
+        text-wrap: nowrap;
+      }
+
+      :host .table > table th:not(:first-child),
+      :host .table > table tr th:first-child:empty {
+        border-color: var(--header-background);
+        background: var(--header-background);
+      }
+
+      :host .table>table th,
+      :host .table>table td {
+        padding: var(--cell-padding);
+      }
+
+      :host .table>table td {
+        border-top: 0;
+        border-bottom: var(--border);
+        border-left: 0;
       }
     `
 
@@ -146,6 +176,10 @@ export default class Table extends Shadow() {
 
   get table() {
     return this.root.querySelector('.table');
+  }
+
+  get navigationButtons() {
+    return this.root.querySelector('.button-group')
   }
 
   get aButtonBackward() {

@@ -1,10 +1,3 @@
-/**
-  * Variables naming rule: --{selector aka component aka namespace}-{css property}-{pseudo class or media query name} eg. --p-background-color-hover 
-  * NOTE: Within the component don't use any name spacing eg. component header don't use --header-default-color just use --color the namespace can be added by the Shadow as an html attribute
-  * - if a component holds other components or nodes you can declare or remap classes eg. :host > h1 {--color: var(--h1-color, white);}
-  * - if a component holds other components you should share the attribute namespace with its children
-  */
-
 :host {
   --table-default-background: var(--table-default-background-custom, none);
   --table-default-color: var(--table-default-color-custom, var(--color, black));
@@ -20,12 +13,14 @@
   --button-primary-padding: 0.5em 0.75em;
 }
 
-:host .button-group {
-  justify-content: var(--table-default-buttons-justify-content);
-}
-
-:host .button-group :first-child {
-  margin-right: 0.8em;
+:host strong,
+:host h1,
+:host h2,
+:host h3,
+:host h4,
+:host h5,
+:host h6 {
+  font-family: var(--font-family-bold);
 }
 
 :host .table {
@@ -33,20 +28,8 @@
   margin: var(--content-spacing) 0;
 }
 
-:host .table>table {
-  width: 100%;
-  background: var(--table-default-background);
-  color: var(--table-default-color);
-  border-collapse: separate;
-  border-spacing: 0;
-}
-
 :host .table>table th {
   font-family: var(--font-family-bold);
-  color: var(--table-default-header-color);
-  border-bottom: var(--table-default-header-border);
-  box-sizing: border-box;
-  text-wrap: nowrap;
 }
 
 :host .table>table tr th:first-child {
@@ -58,21 +41,17 @@
 }
 
 :host .table>table th:not(:first-child),
-:host .table>table tr th:first-child:empty {
-  border-color: var(--table-default-header-background);
-  background: var(--table-default-header-background);
+:host .table>table tr th:first-child:empty,
+:host .table>table td:not(:first-child) {
   text-align: end;
 }
 
-:host .table>table th,
-:host .table>table td {
-  padding: var(--table-default-cell-padding);
+:host .table>table th h2,
+:host .table>table td * {
+  margin: 0;
 }
 
 :host .table>table td {
-  border-top: 0;
-  border-bottom: var(--table-default-border);
-  border-left: 0;
   vertical-align: baseline;
 }
 
@@ -83,17 +62,9 @@
   left: 0;
 }
 
-:host .table>table td:not(:first-child) {
-  text-align: end;
-}
-
 :host .table>table td.header-style {
   font-family: var(--font-family-bold);
   color: var(--table-default-header-color) !important;
-}
-
-:host .table>table td * {
-  margin: 0;
 }
 
 :host .table>table tr:hover,
@@ -121,6 +92,10 @@
 :host(.accent-background) .table>table tr th:first-child,
 :host(.accent-background) .table>table tr td:first-child {
   background: var(--table-default-color-accent) !important;
+}
+
+:host(.accent-background) .table {
+  padding: 0 var(--content-spacing) var(--content-spacing) var(--content-spacing);
 }
 
 @media only screen and (max-width: _max-width_) {}
