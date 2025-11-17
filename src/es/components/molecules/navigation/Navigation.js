@@ -335,11 +335,6 @@ export default class Navigation extends Mutation() {
         :host > nav > ul > li.open a-arrow {
           --color: var(--color-secondary);
         }
-        :host > nav > ul li:hover ul,
-        :host > nav > ul li:not(.open) a-link.open ~ ul,
-        :host > nav > ul li ul:hover{
-          display: none;
-        }
         :host > nav > ul li.open ul{
           display: block;
         }
@@ -624,7 +619,6 @@ export default class Navigation extends Mutation() {
         width: 775px;
         top: -115px;
         background-color: var(--navigation-default-meta-background-color-custom);
-        z-index: 99999;
       }
       :host > nav > ul > li > .meta-nav > div {
         display: flex;
