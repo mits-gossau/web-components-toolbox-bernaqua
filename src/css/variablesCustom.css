@@ -76,6 +76,7 @@
   --header-default-background-color-custom: transparent;
   --header-default-header-position: static;
   --header-default-width: calc(var(--header-default-content-width));
+  --header-default-width-mobile: auto;
   --header-default-height-custom: 115px;
   --header-default-margin-custom: auto;
   --header-default-justify-content-custom: flex-start;
@@ -120,6 +121,8 @@
   --emotion-pictures-with-video-text-left-custom: 0;
   --emotion-pictures-with-video-text-right-custom: 0;
 
+  --emotion-carousel-default-height-mobile: 20em;
+  --emotion-carousel-default-img-height-mobile-custom: 50%;
   --emotion-carousel-default-color-hover-custom: var(--m-white);
   --emotion-carousel-default-any-margin-top-first-child-custom: 0;
   --emotion-carousel-default-any-margin-top-first-child-mobile-custom: 0;
