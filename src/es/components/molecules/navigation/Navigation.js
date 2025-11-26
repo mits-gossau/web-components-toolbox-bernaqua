@@ -388,11 +388,13 @@ export default class Navigation extends Mutation() {
         background-position-y: 40%;
         transition: background-color 200ms linear, color 200ms linear;
       }
-      :host > nav > ul > li.topnavigation > a-link:hover {
-        background-color: var(--color-secondary);
-        --navigation-default-color: var(--m-white);
-        --navigation-default-color-active: var(--m-white);
-        --navigation-default-color-mobile: var(--m-white);
+      @media only screen and (min-width: _max-width_) {
+        :host > nav > ul > li.topnavigation > a-link:hover {
+          background-color: var(--color-secondary);
+          --navigation-default-color: var(--m-white);
+          --navigation-default-color-active: var(--m-white);
+          --navigation-default-color-mobile: var(--m-white);
+        }
       }
       :host > nav > ul > li.topnavigation section {
         --navigation-default-color: var(--m-white);
@@ -640,6 +642,7 @@ export default class Navigation extends Mutation() {
       }
 
       @media only screen and (max-width: _max-width_) {
+        
         :host > nav > ul > li > .meta-nav {
           position: static;
           height: 100%;
