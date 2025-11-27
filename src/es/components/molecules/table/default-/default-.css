@@ -94,8 +94,4 @@
   background: var(--table-default-color-accent) !important;
 }
 
-:host(.accent-background) .table {
-  padding: 0 var(--content-spacing) var(--content-spacing) var(--content-spacing);
-}
-
 @media only screen and (max-width: _max-width_) {}
