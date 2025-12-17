@@ -23,6 +23,12 @@
   font-family: var(--font-family-bold);
 }
 
+:host>h2 {
+  color: var(--table-default-header-color);
+  padding: var(--table-default-cell-padding);
+  padding-bottom: 0;
+}
+
 :host .table {
   overflow-x: auto;
   margin: var(--content-spacing) 0;
@@ -33,11 +39,12 @@
 }
 
 :host .table>table tr th:first-child {
-  font-family: var(--font-family-bold);
-  background: var(--table-default-time-column-background);
   text-align: start;
-  position: sticky;
-  left: 0;
+}
+
+:host .table>table tr th:first-child,
+:host .table>table tr td:first-child {
+  background: var(--table-default-time-column-background);
 }
 
 :host .table>table th:not(:first-child),
@@ -46,7 +53,8 @@
   text-align: end;
 }
 
-:host .table>table th h2,
+:host>h2,
+:host .table>table th *,
 :host .table>table td * {
   margin: 0;
 }
@@ -56,10 +64,7 @@
 }
 
 :host .table>table tr td:first-child {
-  background: var(--table-default-time-column-background);
   color: var(--table-default-time-column-color);
-  position: sticky;
-  left: 0;
 }
 
 :host .table>table td.header-style {

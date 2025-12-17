@@ -39,11 +39,8 @@
   font-family: var(--font-family-bold);
   background: var(--table-timetable-time-column-background);
   color: var(--table-timetable-time-column-color);
-  position: sticky;
-  left: 0;
   border-left: var(--table-timetable-border);
   border-bottom-color: var(--table-timetable-time-column-border-color);
-  z-index: 2;
 }
 
 :host .table>table tr:last-child td:first-child {

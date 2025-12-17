@@ -11,15 +11,15 @@ export default class Table extends Shadow() {
   constructor(options = {}, ...args) {
     super({ importMetaUrl: import.meta.url, ...options }, ...args);
 
-    this.forwardsNavigationButtonListener = (event) => {
+    this.forwardsNavigationButtonListener = () => {
       this.scrollToNextColumn(true);
     }
 
-    this.backwardsNavigationButtonListener = (event) => {
+    this.backwardsNavigationButtonListener = () => {
       this.scrollToNextColumn(false);
     }
 
-    this.windowResizeListener = (event) => {
+    this.windowResizeListener = () => {
       this.navigationButtons.style.display = this.table.scrollWidth > this.table.clientWidth ? 'flex' : 'none'
     }
   }
@@ -35,10 +35,12 @@ export default class Table extends Shadow() {
     // timeout to make sure component has rendered
     setTimeout(() => {
       const timeColumnWidth = this.tableHeaders[0].getBoundingClientRect().width;
-      this.tableHeaders.forEach(th => {
-        // set left scroll offset for columns because of fixed first column
-        th.style.scrollMarginLeft = `${timeColumnWidth}px`;
-      });
+      if (this.isFirstColumnSticky) {
+        this.tableHeaders.forEach(th => {
+          // set left scroll offset for columns because of sticky first column
+          th.style.scrollMarginLeft = `${timeColumnWidth}px`;
+        });
+      }
 
       // determine if navigation buttons need to be shown
       this.navigationButtons.style.display = this.table.scrollWidth > this.table.clientWidth ? 'flex' : 'none'
@@ -97,8 +99,7 @@ export default class Table extends Shadow() {
         text-wrap: nowrap;
       }
 
-      :host .table > table th:not(:first-child),
-      :host .table > table tr th:first-child:empty {
+      :host .table > table th:not(:first-child) {
         border-color: var(--header-background);
         background: var(--header-background);
       }
@@ -108,6 +109,15 @@ export default class Table extends Shadow() {
         padding: var(--cell-padding);
       }
 
+      ${this.isFirstColumnSticky ? /* css */`
+        :host .table>table tr th:first-child,
+        :host .table>table tr td:first-child {
+          position: sticky;
+          left: 0;
+          z-index: 2;
+        }`
+        : ``}
+      
       :host .table>table td {
         border-top: 0;
         border-bottom: var(--border);
@@ -152,7 +162,7 @@ export default class Table extends Shadow() {
   }
 
   scrollToNextColumn(isScrollingForward = true) {
-    // gets all vertical border positions of columns
+    // gets all vertical border positions of columns, e.g. if each column is 20 px wide, columnBorders is [ 0, 20, 40, 60 ] etc.
     let columnBorders = [];
     for (let i = 0; i < this.tableHeaders.length; i++) {
       if (i === 0)
@@ -161,13 +171,14 @@ export default class Table extends Shadow() {
         columnBorders.push(columnBorders[i - 1] + this.tableHeaders[i].getBoundingClientRect().width)
     }
 
-    // checks which column is in view on the left of the table, after the fixed first column
-    // if scrolling forwards: scroll to next column, if scrolling backwards: go to previous column or scroll current column into view if it's cut off
     for (let i = 0; i < columnBorders.length - 1; i++) {
+      // check if current column is the first one in view on the left side of the table (excluding the sticky first column if isFirstColumnSticky === true)
       if (this.table.scrollLeft >= Math.round(columnBorders[i]) && this.table.scrollLeft < Math.round(columnBorders[i + 1])) {
+        // check if current column is perfectly aligned with the left side of the table. if not, column is cut off.
         const isCurrentColumnCutOff = Math.abs(this.table.scrollLeft - columnBorders[i]) >= 1;
+        // if scrolling forwards: scroll to next column
+        // if scrolling backwards: go to previous column or scroll current column into view if it's cut off
         const scrollDistanceLeft = isScrollingForward ? columnBorders[i + 1] : isCurrentColumnCutOff ? columnBorders[i] : columnBorders[i - 1];
-
         this.table.scroll({ left: scrollDistanceLeft, behavior: "smooth" })
         break;
       }
@@ -176,6 +187,10 @@ export default class Table extends Shadow() {
 
   get table() {
     return this.root.querySelector('.table');
+  }
+
+  get isFirstColumnSticky() {
+    return this.getAttribute('first-column-sticky') !== null;
   }
 
   get navigationButtons() {
