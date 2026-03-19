@@ -474,6 +474,11 @@ export default class Header extends Shadow() {
         margin-right: 0 !important;
       }
       }
+      @media only screen and (min-width: 2300px) {
+        :host #msrc-profile-flyout {
+          right: calc(((100vw - var(--content-width)) / 2) - 4rem) !important;
+        }
+      }
       @media only screen and (max-width: 1025px) {
         :host #msrc-profile-flyout {
           right: 0 !important;

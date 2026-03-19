@@ -4,7 +4,7 @@
   --navigation-default-a-link-color-no-scroll: var(--navigation-default-a-link-color);
   --navigation-default-a-link-color: var(--navigation-default-color);
   --navigation-default-a-link-content-spacing-no-scroll: var(--navigation-default-a-link-content-spacing);
-  --navigation-default-a-link-content-spacing: 1.1rem var(--content-spacing);
+  --navigation-default-a-link-content-spacing: 18px var(--content-spacing);
   --navigation-default-font-family-custom: var(--font-family);
   --navigation-default-a-link-font-size-no-scroll: var(--navigation-default-a-link-font-size);
   --navigation-default-a-link-font-size: var(--header-default-a-font-size, var(--font-size));
@@ -18,7 +18,7 @@
   --navigation-default-color-open: var(--color-hover);
   --navigation-default-color: var(--navigation-default-color-custom, var(--background-color));
   --navigation-default-flex-wrap: wrap;
-  --navigation-default-font-family: var(--navigation-default-font-family-custom ,var(--font-family-bold));
+  --navigation-default-font-family: var(--navigation-default-font-family-custom, var(--font-family-bold));
   --navigation-default-font-weight: 700;
   --navigation-default-a-link-font-weight: 700;
   --navigation-default-li-padding: 0;
@@ -28,7 +28,7 @@
   --navigation-default-search-li-padding: var(--navigation-default-search-li-padding-custom, calc(0.25rem + 2px) 0 0.25rem var(--content-spacing));
   --navigation-default-transition: all 0.2s ease-out, color 0.3s ease-out;
   --navigation-default-white-space: normal;
-  --navigation-default-word-break: break-word;
+  --navigation-default-word-break: keep-all;
 }
 @media only screen and (max-width: _max-width_) {
   :host {

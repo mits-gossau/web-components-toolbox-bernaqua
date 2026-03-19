@@ -57,3 +57,9 @@
   --logo-default-width-mobile: var(--logo-default-width-mobile-custom, var(--logo-default-width));
   --logo-default-width: var(--header-default-logo-width);
 }
+
+@media only screen and (min-width: 1900px) {
+  :host {
+    --header-default-a-font-size: 32px;
+  }
+}

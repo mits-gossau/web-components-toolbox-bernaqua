@@ -354,6 +354,7 @@ export default class Navigation extends Mutation() {
         margin-top: 42px;
         margin-left: auto;
         max-width: 900px;
+        overflow-wrap: normal;
       }
       :host > nav > ul {
         background-color: var(--background-color);
